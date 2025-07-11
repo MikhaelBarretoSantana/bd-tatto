@@ -1,0 +1,45 @@
+// 🟢 Estilos do botão flutuante do WhatsApp
+
+// =============================================================================
+// WHATSAPP FLOATING BUTTON
+// =============================================================================
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: $color-whatsapp;
+  border: none;
+  border-radius: 50%;
+  color: $color-primary;
+  cursor: pointer;
+  z-index: 1000;
+  @include flex-center;
+  box-shadow: 0 4px 20px rgba($color-whatsapp, 0.4);
+  @include transition();
+  animation: pulse-whatsapp 2s infinite;
+
+  &:hover {
+    background: $color-whatsapp-hover;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba($color-whatsapp, 0.6);
+  }
+
+  &:focus {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  // Responsividade
+  @media (max-width: $bp-mobile) {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

@@ -1,11 +1,11 @@
-// 🚀 Seção principal/banner da página
+// 🚀 Seção principal/banner com logo como imagem
 
 import React from "react";
 import { openWhatsApp } from "../../utils";
 
 /**
  * Seção Hero - Banner principal da página
- * Inclui logo estilizada, título, descrição e call-to-action
+ * Usa a logo oficial como imagem para manter identidade visual
  */
 const Hero: React.FC = () => {
   return (
@@ -13,10 +13,13 @@ const Hero: React.FC = () => {
       <div className="hero__overlay"></div>
 
       <div className="hero__content">
-        {/* Logo BD estilizada */}
+        {/* Logo BD como imagem */}
         <div className="hero__logo">
-          <h1 className="hero__logo-bd">BD</h1>
-          <div className="hero__logo-tattoo">TATTOO</div>
+          <img
+            src="/img/bd-tattoo-logo.png"
+            alt="BD Tattoo - Logo Oficial"
+            className="hero__logo-img"
+          />
         </div>
 
         <h2 className="hero__subtitle">Transformando Pele em Arte Atemporal</h2>

@@ -1,0 +1,323 @@
+// 🗺️ Estilos da seção de localização e mapa
+
+// =============================================================================
+// MAP SECTION
+// =============================================================================
+.map-section {
+  @include section-padding;
+  background: $color-dark;
+
+  &__container {
+    @include container;
+  }
+
+  // =============================================================================
+  // TÍTULOS
+  // =============================================================================
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+
+    @include respond-to($bp-tablet) {
+      font-size: 3rem;
+    }
+  }
+
+  &__description {
+    text-align: center;
+    color: $color-gray-light;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.2rem;
+    }
+  }
+
+  // =============================================================================
+  // LAYOUT PRINCIPAL
+  // =============================================================================
+  &__content {
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+
+    @include respond-to($bp-desktop) {
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+  }
+
+  // =============================================================================
+  // INFORMAÇÕES LATERAIS
+  // =============================================================================
+  &__info {
+    display: grid;
+    gap: 2.5rem;
+
+    // Order para mobile-first
+    order: 2;
+
+    @include respond-to($bp-desktop) {
+      order: 1;
+    }
+  }
+
+  &__address,
+  &__hours {
+    background: rgba($color-primary, 0.03);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba($color-primary, 0.1);
+    @include transition();
+
+    &:hover {
+      background: rgba($color-primary, 0.05);
+      border-color: rgba($color-primary, 0.15);
+      transform: translateY(-2px);
+    }
+
+    h3 {
+      color: $color-primary;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.4rem;
+      }
+
+      // Ícone decorativo
+      &::before {
+        content: "";
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(45deg, $color-primary, $color-gray);
+        border-radius: 2px;
+      }
+    }
+
+    p,
+    div {
+      color: $color-gray-light;
+      line-height: 1.6;
+      font-size: 1rem;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // =============================================================================
+  // HORÁRIOS ESPECÍFICOS
+  // =============================================================================
+  &__schedule {
+    display: grid;
+    gap: 0.75rem;
+
+    div {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba($color-gray, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include transition();
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: $color-primary;
+        padding-left: 0.5rem;
+      }
+
+      // Destacar dias fechados
+      &:last-child {
+        color: $color-gray;
+        font-style: italic;
+      }
+    }
+  }
+
+  // =============================================================================
+  // BOTÃO DE AGENDAMENTO
+  // =============================================================================
+  &__cta {
+    @include button-whatsapp;
+    @include flex-center;
+    gap: 0.75rem;
+    justify-self: start;
+    width: 100%;
+
+    @include respond-to($bp-tablet) {
+      width: auto;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.2rem;
+    }
+
+    // Ícone animado
+    svg {
+      @include transition();
+    }
+
+    &:hover svg {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    // Efeito de pulso sutil
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 0.75rem;
+      background: inherit;
+      opacity: 0;
+      z-index: -1;
+      @include transition();
+    }
+
+    &:hover::after {
+      opacity: 0.3;
+      transform: scale(1.05);
+    }
+  }
+
+  // =============================================================================
+  // MAPA
+  // =============================================================================
+  &__map {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba($color-darkest, 0.3);
+    min-height: 400px;
+
+    // Order para mobile-first
+    order: 1;
+
+    @include respond-to($bp-tablet) {
+      min-height: 500px;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba($color-darkest, 0.4);
+    }
+
+    @include respond-to($bp-desktop) {
+      order: 2;
+      min-height: 600px;
+    }
+
+    // Overlay sutil para melhor integração visual
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        45deg,
+        rgba($color-primary, 0.02),
+        transparent
+      );
+      z-index: 1;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    // Estados de carregamento
+    &--loading {
+      background: $color-gray-dark;
+      @include flex-center;
+
+      &::after {
+        content: "Carregando mapa...";
+        color: $color-gray-light;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// IFRAME DO GOOGLE MAPS
+// =============================================================================
+.google-map-iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 1rem;
+  @include transition();
+
+  @include respond-to($bp-tablet) {
+    height: 500px;
+    border-radius: 1.5rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    height: 600px;
+  }
+
+  // Hover effect sutil
+  &:hover {
+    transform: scale(1.005);
+    box-shadow: 0 25px 50px rgba($color-darkest, 0.5);
+  }
+
+  // Estados de loading
+  &[data-loading="true"] {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
+
+// =============================================================================
+// ANIMAÇÕES ESPECÍFICAS
+// =============================================================================
+
+// Animação de entrada para as informações
+@keyframes slideInInfo {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animação de entrada para o mapa
+@keyframes slideInMap {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Aplicar animações com delay
+.map-section__info {
+  animation: slideInInfo 0.8s ease-out 0.2s both;
+}
+
+.map-section__map {
+  animation: slideInMap 0.8s ease-out 0.4s both;
+}

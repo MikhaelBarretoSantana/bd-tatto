@@ -1,0 +1,181 @@
+// 👨‍🎨 Estilos da seção sobre o artista
+
+// =============================================================================
+// ABOUT SECTION
+// =============================================================================
+.about {
+  @include section-padding;
+  background: $color-dark;
+
+  &__container {
+    @include container;
+  }
+
+  // =============================================================================
+  // LAYOUT GRID
+  // =============================================================================
+  &__content {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+
+    @include respond-to($bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  // =============================================================================
+  // TEXTO
+  // =============================================================================
+  &__text {
+    // Order para mobile-first
+    order: 2;
+
+    @include respond-to($bp-tablet) {
+      order: 1;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin-bottom: 2rem;
+    font-weight: 700;
+
+    @include respond-to($bp-tablet) {
+      font-size: 3rem;
+    }
+
+    // Adicionar um leve efeito
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $color-primary, transparent);
+      border-radius: 2px;
+    }
+  }
+
+  &__description {
+    color: $color-gray-light;
+    font-size: 1.1rem;
+
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // Destacar textos em negrito e itálico
+      strong {
+        color: $color-primary;
+        font-weight: 600;
+      }
+
+      em {
+        color: $color-gray;
+        font-style: italic;
+        font-size: 1.05rem;
+      }
+    }
+  }
+
+  // =============================================================================
+  // IMAGEM
+  // =============================================================================
+  &__image {
+    // Order para mobile-first
+    order: 1;
+
+    @include respond-to($bp-tablet) {
+      order: 2;
+    }
+
+    &-wrapper {
+      background: $color-gray-dark;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px rgba($color-darkest, 0.5);
+      position: relative;
+      @include transition(0.6s);
+
+      // Efeito overlay no hover
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba($color-primary, 0.1),
+          transparent
+        );
+        z-index: 1;
+        opacity: 0;
+        @include transition();
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 35px 60px rgba($color-darkest, 0.6);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      // Responsividade
+      @include respond-to($bp-tablet) {
+        border-radius: 1.5rem;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      @include transition(0.6s);
+
+      @include respond-to($bp-tablet) {
+        height: 560px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // =============================================================================
+  // VARIAÇÃO COM IMAGEM À ESQUERDA
+  // =============================================================================
+  &--image-left {
+    .about__content {
+      @include respond-to($bp-tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about__text {
+      @include respond-to($bp-tablet) {
+        order: 2;
+      }
+    }
+
+    .about__image {
+      @include respond-to($bp-tablet) {
+        order: 1;
+      }
+    }
+  }
+}

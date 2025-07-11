@@ -1,0 +1,32 @@
+// src/styles/index.scss
+// 🎨 Arquivo principal de estilos - Importa todos os componentes
+
+// =============================================================================
+// FUNDAÇÃO
+// =============================================================================
+// IMPORTANTE: Variables deve vir PRIMEIRO para disponibilizar 
+// $variables e @mixins para todos os outros arquivos
+@import 'variables';
+
+// Base styles e reset vem em segundo
+@import 'base';
+
+// =============================================================================
+// COMPONENTES
+// =============================================================================
+// Ordem dos componentes por complexidade e dependências
+
+// Componentes utilitários (sem dependências)
+@import 'components/whatsapp-float';
+
+// Componentes estruturais (layout)
+@import 'components/header';
+@import 'components/footer';
+
+// Componentes de conteúdo (seções principais)
+@import 'components/hero';
+@import 'components/about';
+@import 'components/portfolio';
+@import 'components/contact';
+@import 'components/_map-section';
+

@@ -1,0 +1,457 @@
+// 🎨 Estilos do portfolio com carrossel interativo
+
+// =============================================================================
+// PORTFOLIO SECTION
+// =============================================================================
+.portfolio {
+  padding: 4rem 1rem 6rem;
+  background: $color-darker;
+
+  @include respond-to($bp-tablet) {
+    @include section-padding;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  // =============================================================================
+  // TÍTULOS
+  // =============================================================================
+  &__title {
+    font-size: 2rem;
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    @include respond-to($bp-tablet) {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: $color-gray-light;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.1rem;
+      margin-bottom: 4rem;
+      padding: 0;
+    }
+  }
+
+  // =============================================================================
+  // CARROSSEL BASE
+  // =============================================================================
+  &__carousel {
+    margin-bottom: 3rem;
+
+    @include respond-to($bp-tablet) {
+      margin-bottom: 4rem;
+    }
+
+    &-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @include respond-to($bp-tablet) {
+        max-width: 800px;
+        padding: 0 3rem;
+      }
+
+      @include respond-to($bp-desktop) {
+        padding: 0 4rem;
+      }
+
+      // Focus para acessibilidade
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 4px;
+        border-radius: 1rem;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+
+    &-wrapper {
+      overflow: hidden;
+      border-radius: 0.75rem;
+      box-shadow: 0 15px 30px rgba($color-darkest, 0.5);
+      -webkit-overflow-scrolling: touch;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+
+      @include respond-to($bp-tablet) {
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 40px rgba($color-darkest, 0.5);
+      }
+    }
+
+    &-track {
+      display: flex;
+      @include transition(0.5s);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+    }
+
+    &-slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    // =============================================================================
+    // SLIDES DE IMAGEM NORMAIS
+    // =============================================================================
+    &-image {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+
+      @include respond-to($bp-tablet) {
+        aspect-ratio: 4/3;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include transition(0.6s);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    &-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        to top,
+        rgba($color-darkest, 0.9) 0%,
+        rgba($color-darkest, 0.6) 50%,
+        transparent 100%
+      );
+      padding: 1.5rem;
+      color: $color-primary;
+      opacity: 0;
+      @include transition(0.4s);
+
+      @include respond-to($bp-tablet) {
+        padding: 2rem;
+        opacity: 0;
+      }
+
+      // Sempre visível em mobile
+      @media (max-width: $bp-tablet - 1px) {
+        opacity: 1;
+        background: linear-gradient(
+          to top,
+          rgba($color-darkest, 0.95) 0%,
+          rgba($color-darkest, 0.8) 50%,
+          transparent 100%
+        );
+      }
+    }
+
+    // Hover effects
+    &-slide:hover &-overlay {
+      opacity: 1;
+    }
+
+    &-slide:hover &-img {
+      transform: scale(1.05);
+    }
+
+    &-content {
+      text-align: left;
+    }
+
+    &-category {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: $color-primary;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &-description {
+      font-size: 0.9rem;
+      color: $color-gray-light;
+      line-height: 1.4;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1rem;
+      }
+    }
+
+    // =============================================================================
+    // SLIDE ESPECIAL DO INSTAGRAM
+    // =============================================================================
+    &-instagram {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+
+      @include respond-to($bp-tablet) {
+        aspect-ratio: 4/3;
+      }
+
+      &-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(#405de6, 0.9) 0%,
+          rgba(#5851db, 0.9) 25%,
+          rgba(#833ab4, 0.9) 50%,
+          rgba(#c13584, 0.9) 75%,
+          rgba(#e1306c, 0.9) 100%
+        );
+        @include flex-center;
+        text-align: center;
+        padding: 1.5rem;
+
+        @include respond-to($bp-tablet) {
+          padding: 2rem;
+        }
+      }
+
+      &-content {
+        color: $color-primary;
+        max-width: 300px;
+
+        @include respond-to($bp-tablet) {
+          max-width: 400px;
+        }
+      }
+
+      &-icon {
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+
+        @include respond-to($bp-tablet) {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      &-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+        color: $color-primary;
+
+        @include respond-to($bp-tablet) {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        opacity: 0.9;
+
+        @include respond-to($bp-tablet) {
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-btn {
+        @include flex-center;
+        gap: 0.5rem;
+        @include glass-effect;
+        border: 2px solid rgba($color-primary, 0.3);
+        color: $color-primary;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        @include transition();
+        display: inline-flex;
+
+        @include respond-to($bp-tablet) {
+          gap: 0.75rem;
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background: rgba($color-primary, 0.25);
+          border-color: rgba($color-primary, 0.5);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba($color-primary, 0.2);
+        }
+
+        &:focus {
+          outline: 2px solid $color-primary;
+          outline-offset: 4px;
+        }
+
+        &:focus:not(:focus-visible) {
+          outline: none;
+        }
+      }
+    }
+
+    // =============================================================================
+    // BOTÕES DE NAVEGAÇÃO
+    // =============================================================================
+    &-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      @include glass-effect;
+      border: 1px solid rgba($color-primary, 0.3);
+      color: $color-primary;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      @include flex-center;
+      cursor: pointer;
+      @include transition();
+      z-index: 10;
+
+      @include respond-to($bp-tablet) {
+        width: 50px;
+        height: 50px;
+        background: rgba($color-primary, 0.1);
+        border-color: rgba($color-primary, 0.2);
+      }
+
+      &:hover {
+        background: rgba($color-primary, 0.25);
+        border-color: rgba($color-primary, 0.5);
+        transform: translateY(-50%) scale(1.1);
+
+        @include respond-to($bp-tablet) {
+          background: rgba($color-primary, 0.2);
+          border-color: rgba($color-primary, 0.4);
+        }
+      }
+
+      &--prev {
+        left: 10px;
+
+        @include respond-to($bp-tablet) {
+          left: -25px;
+        }
+      }
+
+      &--next {
+        right: 10px;
+
+        @include respond-to($bp-tablet) {
+          right: -25px;
+        }
+      }
+
+      // Esconder em telas muito pequenas
+      @media (max-width: 360px) {
+        display: none;
+      }
+
+      // Estados de foco
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+
+    // =============================================================================
+    // INDICADORES
+    // =============================================================================
+    &-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      padding: 0 1rem;
+
+      @include respond-to($bp-tablet) {
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 0;
+      }
+    }
+
+    &-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid rgba($color-primary, 0.3);
+      background: transparent;
+      cursor: pointer;
+      @include transition();
+
+      // Maior área de toque em mobile
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border-radius: 50%;
+      }
+
+      @include respond-to($bp-tablet) {
+        width: 12px;
+        height: 12px;
+      }
+
+      &:hover {
+        border-color: rgba($color-primary, 0.6);
+      }
+
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 4px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      &--active {
+        background: $color-primary;
+        border-color: $color-primary;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

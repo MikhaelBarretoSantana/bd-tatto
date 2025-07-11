@@ -1,0 +1,278 @@
+// 🦶 Estilos do rodapé
+
+// =============================================================================
+// FOOTER
+// =============================================================================
+.footer {
+  background: $color-darkest;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+
+  // Efeito sutil de gradiente no topo
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($color-primary, 0.3),
+      transparent
+    );
+  }
+
+  &__container {
+    @include container;
+    max-width: 900px;
+  }
+
+  // =============================================================================
+  // LOGO NO RODAPÉ
+  // =============================================================================
+  &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    @include transition();
+
+    @include respond-to($bp-tablet) {
+      font-size: 2.2rem;
+    }
+
+    // Hover effect sutil
+    &:hover {
+      color: $color-secondary;
+      text-shadow: 0 0 20px rgba($color-primary, 0.3);
+    }
+
+    // Logo como imagem (se usar)
+    &-img {
+      height: 60px;
+      width: auto;
+      filter: brightness(1.1);
+      @include transition();
+
+      &:hover {
+        filter: brightness(1.2);
+        transform: scale(1.05);
+      }
+
+      @include respond-to($bp-tablet) {
+        height: 70px;
+      }
+    }
+  }
+
+  // =============================================================================
+  // COPYRIGHT
+  // =============================================================================
+  &__copyright {
+    color: $color-gray;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    // Ano dinâmico (se necessário)
+    .year {
+      color: $color-primary;
+      font-weight: 500;
+    }
+  }
+
+  // =============================================================================
+  // LINKS SOCIAIS
+  // =============================================================================
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    @include respond-to($bp-tablet) {
+      gap: 2.5rem;
+    }
+
+    &-link {
+      color: $color-gray;
+      @include transition();
+      padding: 0.75rem;
+      border-radius: 50%;
+      background: rgba($color-primary, 0.05);
+      border: 1px solid rgba($color-primary, 0.1);
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+
+      @include respond-to($bp-tablet) {
+        width: 55px;
+        height: 55px;
+        padding: 0.875rem;
+      }
+
+      // Estados hover gerais
+      &:hover {
+        color: $color-primary;
+        background: rgba($color-primary, 0.1);
+        border-color: rgba($color-primary, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba($color-primary, 0.2);
+      }
+
+      // Estados de foco para acessibilidade
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 4px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      // =============================================================================
+      // VARIANTE INSTAGRAM
+      // =============================================================================
+      &--instagram {
+        &:hover {
+          color: #e1306c;
+          background: linear-gradient(
+            45deg,
+            rgba(#405de6, 0.1),
+            rgba(#e1306c, 0.1)
+          );
+          border-color: rgba(#e1306c, 0.3);
+          box-shadow: 0 5px 15px rgba(#e1306c, 0.2);
+        }
+      }
+
+      // =============================================================================
+      // VARIANTE WHATSAPP
+      // =============================================================================
+      &--whatsapp {
+        &:hover {
+          color: $color-whatsapp;
+          background: rgba($color-whatsapp, 0.1);
+          border-color: rgba($color-whatsapp, 0.2);
+          box-shadow: 0 5px 15px rgba($color-whatsapp, 0.2);
+
+          // Animação sutil de pulso
+          animation: pulse-gentle 1.5s infinite;
+        }
+      }
+
+      // =============================================================================
+      // VARIANTE FACEBOOK (se necessário)
+      // =============================================================================
+      &--facebook {
+        &:hover {
+          color: #1877f2;
+          background: rgba(#1877f2, 0.1);
+          border-color: rgba(#1877f2, 0.2);
+          box-shadow: 0 5px 15px rgba(#1877f2, 0.2);
+        }
+      }
+
+      // Ícones responsivos
+      svg {
+        width: 24px;
+        height: 24px;
+        @include transition();
+
+        @include respond-to($bp-tablet) {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      // Efeito no ícone durante hover
+      &:hover svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // =============================================================================
+  // INFORMAÇÕES ADICIONAIS (opcional)
+  // =============================================================================
+  &__info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba($color-primary, 0.1);
+    color: $color-gray-light;
+    font-size: 0.9rem;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1rem;
+    }
+
+    // Links no footer info
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      @include transition();
+
+      &:hover {
+        color: $color-secondary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// ANIMAÇÕES ESPECÍFICAS
+// =============================================================================
+
+// Pulso suave para WhatsApp
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    transform: translateY(-3px) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+// Animação de entrada para os elementos do footer
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Aplicar animações sequenciais
+.footer__logo {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.footer__copyright {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.footer__social {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.footer__info {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}

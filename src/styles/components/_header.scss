@@ -1,0 +1,203 @@
+// 🧭 Estilos do header e navegação
+
+// =============================================================================
+// HEADER
+// =============================================================================
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  @include transition();
+
+  &--scrolled {
+    background: rgba($color-darker, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba($color-darkest, 0.3);
+  }
+
+  &__nav {
+    @include container;
+    padding: 1rem 2rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // =============================================================================
+  // LOGO
+  // =============================================================================
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+
+    // Logo como texto (fallback)
+    &-bd {
+      color: $color-primary;
+      font-family: serif;
+    }
+
+    &-tattoo {
+      color: $color-gray;
+      margin-left: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+    }
+
+    // Logo como imagem
+    &-img {
+      height: 40px;
+      width: auto;
+      cursor: pointer;
+      @include transition();
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+      }
+
+      // Responsividade
+      @include respond-to($bp-tablet) {
+        height: 45px;
+      }
+
+      @media (max-width: $bp-mobile) {
+        height: 35px;
+      }
+    }
+  }
+
+  // Logo menor quando scrolled
+  &--scrolled {
+    .header__logo-img {
+      height: 35px;
+
+      @media (max-width: $bp-tablet) {
+        height: 30px;
+      }
+    }
+  }
+
+  // =============================================================================
+  // MENU DESKTOP
+  // =============================================================================
+  &__menu {
+    &--desktop {
+      display: none;
+      list-style: none;
+      gap: 2.5rem;
+
+      @include respond-to($bp-tablet) {
+        display: flex;
+      }
+    }
+
+    // =============================================================================
+    // MENU MOBILE
+    // =============================================================================
+    &--mobile {
+      display: block;
+      padding: 1rem 0;
+      max-height: 0;
+      overflow: hidden;
+      @include transition(0.4s);
+
+      @include respond-to($bp-tablet) {
+        display: none;
+      }
+
+      &.header__menu--open {
+        max-height: 350px;
+      }
+    }
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    // =============================================================================
+    // MENU LINKS
+    // =============================================================================
+    &-link {
+      background: none;
+      border: none;
+      color: $color-gray-light;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      position: relative;
+      @include transition();
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      // Efeito underline animado
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color-primary;
+        @include transition();
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      // Estados de foco para acessibilidade
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+  }
+
+  // =============================================================================
+  // MENU TOGGLE (Hambúrguer)
+  // =============================================================================
+  &__menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: $color-primary;
+    cursor: pointer;
+    padding: 0.5rem;
+    @include transition();
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    @include respond-to($bp-tablet) {
+      display: none;
+    }
+  }
+}

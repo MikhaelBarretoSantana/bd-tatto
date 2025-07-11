@@ -1,0 +1,354 @@
+// 🚀 Estilos do banner principal (Hero section) - COM EFEITOS BRILHANTES
+
+// =============================================================================
+// HERO SECTION
+// =============================================================================
+.hero {
+  min-height: 100vh;
+  @include flex-center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    $color-darkest 0%,
+    $color-dark 50%,
+    $color-darkest 100%
+  );
+
+  // =============================================================================
+  // OVERLAY DECORATIVO
+  // =============================================================================
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 30% 20%,
+        rgba($color-primary, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 70% 80%,
+        rgba($color-primary, 0.04) 0%,
+        transparent 50%
+      );
+    z-index: 1;
+  }
+
+  // =============================================================================
+  // CONTEÚDO PRINCIPAL
+  // =============================================================================
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+  }
+
+  // =============================================================================
+  // LOGO COM EFEITOS BRILHANTES
+  // =============================================================================
+  &__logo {
+
+    // Logo como texto com efeitos IMPRESSIONANTES
+    &-bd {
+      font-size: 4rem;
+      font-weight: bold;
+      color: $color-primary;
+      font-family: serif;
+      display: block;
+      margin-bottom: 1rem;
+      position: relative;
+      
+      // 🌟 EFEITO BRILHANTE PRINCIPAL
+      text-shadow: 
+        0 0 10px rgba($color-primary, 0.8),
+        0 0 20px rgba($color-primary, 0.6),
+        0 0 30px rgba($color-primary, 0.4),
+        0 0 40px rgba($color-primary, 0.2);
+      
+      // 🌟 ANIMAÇÃO DE PULSO BRILHANTE
+      animation: glowPulse 3s ease-in-out infinite alternate;
+      
+      // 🌟 EFEITO NEON COM OUTLINE
+      -webkit-text-stroke: 1px rgba($color-primary, 0.3);
+      
+      @include respond-to($bp-tablet) {
+        font-size: 7rem;
+        text-shadow: 
+          0 0 15px rgba($color-primary, 0.9),
+          0 0 25px rgba($color-primary, 0.7),
+          0 0 35px rgba($color-primary, 0.5),
+          0 0 45px rgba($color-primary, 0.3);
+      }
+
+      // 🌟 EFEITO ADICIONAL: Borda brilhante no hover
+      &:hover {
+        animation: glowIntense 1.5s ease-in-out infinite alternate;
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &-tattoo {
+      font-size: 1.5rem;
+      letter-spacing: 0.4em;
+      color: $color-gray-light;
+      font-weight: 300;
+      position: relative;
+      
+      // 🌟 EFEITO BRILHANTE SUTIL
+      text-shadow: 
+        0 0 8px rgba($color-gray-light, 0.6),
+        0 0 15px rgba($color-gray-light, 0.3);
+      
+      // 🌟 ANIMAÇÃO DE BRILHO SUTIL
+      animation: subtleGlow 4s ease-in-out infinite alternate;
+
+      @include respond-to($bp-tablet) {
+        font-size: 2.5rem;
+        text-shadow: 
+          0 0 12px rgba($color-gray-light, 0.7),
+          0 0 20px rgba($color-gray-light, 0.4);
+      }
+    }
+
+    // Logo como imagem (preferida)
+    &-img {
+      width: clamp(250px, 50vw, 400px);
+      height: auto;
+      object-fit: contain;
+      filter: brightness(1.1) contrast(1.05);
+      opacity: 0;
+      animation: logoFadeInGlow 1.5s ease-out 0.5s forwards;
+      
+      // 🌟 EFEITO BRILHANTE NA LOGO IMAGEM
+      filter: 
+        brightness(1.1) 
+        contrast(1.05) 
+        drop-shadow(0 0 10px rgba($color-primary, 0.4))
+        drop-shadow(0 0 20px rgba($color-primary, 0.2));
+      
+      // 🌟 HOVER EFFECT NA LOGO
+      &:hover {
+        filter: 
+          brightness(1.2) 
+          contrast(1.1) 
+          drop-shadow(0 0 15px rgba($color-primary, 0.6))
+          drop-shadow(0 0 30px rgba($color-primary, 0.3));
+        transform: scale(1.03);
+        transition: all 0.4s ease;
+      }
+      
+      // Responsividade
+      @include respond-to($bp-tablet) {
+        width: clamp(300px, 45vw, 450px);
+      }
+      
+      @media (max-width: $bp-tablet) {
+        width: clamp(200px, 70vw, 300px);
+      }
+      
+      @media (max-width: $bp-mobile) {
+        width: clamp(180px, 80vw, 250px);
+      }
+
+      // Se a logo for escura em fundo escuro
+      &--inverted {
+        filter: 
+          invert(1) 
+          brightness(1.1) 
+          contrast(1.05)
+          drop-shadow(0 0 10px rgba($color-primary, 0.4));
+      }
+    }
+  }
+
+  // =============================================================================
+  // TEXTOS COM EFEITOS BRILHANTES
+  // =============================================================================
+  &__subtitle {
+    font-size: 1.25rem;
+    color: $color-gray;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    
+    // 🌟 EFEITO BRILHANTE SUTIL NO SUBTÍTULO
+    text-shadow: 
+      0 0 5px rgba($color-gray, 0.5),
+      0 0 10px rgba($color-gray, 0.2);
+    
+    // 🌟 ANIMAÇÃO DE ENTRADA BRILHANTE
+    animation: fadeInGlow 1s ease-out 1s both;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 
+        0 0 8px rgba($color-gray, 0.6),
+        0 0 15px rgba($color-gray, 0.3);
+    }
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: $color-gray;
+    margin-bottom: 3rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    
+    // 🌟 EFEITO BRILHANTE MUITO SUTIL
+    text-shadow: 0 0 3px rgba($color-gray, 0.3);
+    
+    // 🌟 ANIMAÇÃO DE ENTRADA
+    animation: fadeInGlow 1s ease-out 1.2s both;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.2rem;
+    }
+  }
+
+  // =============================================================================
+  // CALL TO ACTION COM BRILHO
+  // =============================================================================
+  &__cta {
+    @include button-primary;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    
+    // 🌟 EFEITO BRILHANTE NO BOTÃO
+    box-shadow: 
+      0 5px 15px rgba($color-primary, 0.2),
+      0 0 20px rgba($color-primary, 0.1);
+    
+    // 🌟 ANIMAÇÃO DE ENTRADA
+    animation: fadeInGlow 1s ease-out 1.5s both;
+    
+    // 🌟 EFEITO SHIMMER (brilho que passa)
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba($color-primary, 0.3),
+        transparent
+      );
+      transition: left 0.7s ease;
+    }
+    
+    &:hover::before {
+      left: 100%;
+    }
+    
+    &:hover {
+      box-shadow: 
+        0 10px 30px rgba($color-primary, 0.3),
+        0 0 30px rgba($color-primary, 0.2);
+      text-shadow: 0 0 10px rgba($color-darkest, 0.5);
+    }
+
+    @include respond-to($bp-tablet) {
+      padding: 1.4rem 3rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// =============================================================================
+// ANIMAÇÕES BRILHANTES
+// =============================================================================
+
+// 🌟 Animação principal de brilho pulsante
+@keyframes glowPulse {
+  0% {
+    text-shadow: 
+      0 0 10px rgba($color-primary, 0.8),
+      0 0 20px rgba($color-primary, 0.6),
+      0 0 30px rgba($color-primary, 0.4),
+      0 0 40px rgba($color-primary, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 15px rgba($color-primary, 1),
+      0 0 25px rgba($color-primary, 0.8),
+      0 0 35px rgba($color-primary, 0.6),
+      0 0 45px rgba($color-primary, 0.4);
+  }
+}
+
+// 🌟 Brilho intenso para hover
+@keyframes glowIntense {
+  0% {
+    text-shadow: 
+      0 0 15px rgba($color-primary, 1),
+      0 0 25px rgba($color-primary, 0.8),
+      0 0 35px rgba($color-primary, 0.6),
+      0 0 45px rgba($color-primary, 0.4);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px rgba($color-primary, 1),
+      0 0 30px rgba($color-primary, 0.9),
+      0 0 40px rgba($color-primary, 0.7),
+      0 0 50px rgba($color-primary, 0.5),
+      0 0 60px rgba($color-primary, 0.3);
+  }
+}
+
+// 🌟 Brilho sutil para elementos secundários
+@keyframes subtleGlow {
+  0% {
+    text-shadow: 
+      0 0 8px rgba($color-gray-light, 0.6),
+      0 0 15px rgba($color-gray-light, 0.3);
+  }
+  100% {
+    text-shadow: 
+      0 0 12px rgba($color-gray-light, 0.8),
+      0 0 20px rgba($color-gray-light, 0.4);
+  }
+}
+
+// 🌟 Animação de entrada da logo com brilho
+@keyframes logoFadeInGlow {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    filter: 
+      brightness(0.8) 
+      contrast(1) 
+      drop-shadow(0 0 0px rgba($color-primary, 0));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: 
+      brightness(1.1) 
+      contrast(1.05) 
+      drop-shadow(0 0 10px rgba($color-primary, 0.4))
+      drop-shadow(0 0 20px rgba($color-primary, 0.2));
+  }
+}
+
+// 🌟 Fade in com brilho para textos
+@keyframes fadeInGlow {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+    text-shadow: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

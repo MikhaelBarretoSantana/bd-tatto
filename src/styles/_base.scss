@@ -1,0 +1,84 @@
+// 🌐 Reset, base styles e configurações globais
+
+// =============================================================================
+// RESET
+// =============================================================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// =============================================================================
+// BASE STYLES
+// =============================================================================
+.bd-tattoo {
+  min-height: 100vh;
+  background: $color-darker;
+  color: $color-primary;
+  font-family: "Inter", "Arial", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+strong {
+  color: $color-primary;
+  font-weight: 600;
+}
+
+em {
+  color: $color-gray;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+.container {
+  @include container;
+  padding: 0 2rem;
+}
+
+// =============================================================================
+// TOAST CUSTOMIZATION
+// =============================================================================
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  background: $color-gray-dark !important;
+  color: $color-primary !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 10px 30px rgba($color-darkest, 0.4) !important;
+  border: 1px solid rgba($color-primary, 0.1) !important;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(
+    135deg,
+    $color-whatsapp,
+    darken($color-whatsapp, 10%)
+  ) !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+}
+
+.Toastify__progress-bar {
+  background: rgba($color-primary, 0.3) !important;
+}
+
+.Toastify__close-button {
+  color: $color-primary !important;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}

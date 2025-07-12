@@ -11,24 +11,7 @@ import {
 } from "lucide-react";
 import { useCarousel } from "../../hooks/useCarousel";
 import { openWhatsApp } from "../../utils";
-
-// Dados do estúdio (você pode mover para constants depois)
-const STUDIO_IMAGES = [
-  {
-    src: "/img/studio/studio-1.jpg", // Substitua pelos nomes reais
-    title: "Ambiente Principal",
-    description:
-      "Estúdio moderno e acolhedor, pensado para seu conforto e tranquilidade durante toda a sessão.",
-    highlight: "Equipamentos de última geração",
-  },
-  {
-    src: "/img/studio/studio-2.jpg", // Substitua pelos nomes reais
-    title: "Área de Trabalho",
-    description:
-      "Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.",
-    highlight: "Ambiente 100% esterilizado",
-  },
-];
+import { STUDIO_IMAGES } from "../../constants";
 
 const STUDIO_FEATURES = [
   {

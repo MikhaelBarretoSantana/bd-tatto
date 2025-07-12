@@ -1,0 +1,611 @@
+// 🏢 Estilos do showcasing do estúdio físico - ASPECT RATIO CORRIGIDO
+
+// =============================================================================
+// STUDIO SECTION
+// =============================================================================
+.studio {
+  @include section-padding;
+  background: linear-gradient(
+    135deg,
+    $color-dark 0%,
+    $color-darker 50%,
+    $color-dark 100%
+  );
+  position: relative;
+
+  // Overlay decorativo sutil
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 20% 80%,
+      rgba($color-primary, 0.02) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  &__container {
+    @include container;
+    position: relative;
+    z-index: 1;
+  }
+
+  // =============================================================================
+  // CABEÇALHO DA SEÇÃO
+  // =============================================================================
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    @include respond-to($bp-tablet) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+
+    // Efeito brilhante sutil
+    text-shadow: 0 0 20px rgba($color-primary, 0.2);
+
+    @include respond-to($bp-tablet) {
+      font-size: 3rem;
+    }
+
+    // Linha decorativa
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, $color-primary, transparent);
+      border-radius: 2px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-gray-light;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include respond-to($bp-tablet) {
+      font-size: 1.2rem;
+    }
+  }
+
+  // =============================================================================
+  // GALERIA DO ESTÚDIO
+  // =============================================================================
+  &__gallery {
+    margin-bottom: 5rem;
+
+    @include respond-to($bp-tablet) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &__carousel {
+    &-container {
+      position: relative;
+      max-width: 1000px; // Aumentado para acomodar melhor
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @include respond-to($bp-tablet) {
+        padding: 0 3rem;
+      }
+
+      &:focus {
+        outline: 2px solid $color-primary;
+        outline-offset: 4px;
+        border-radius: 1.5rem;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+
+    &-wrapper {
+      overflow: hidden;
+      border-radius: 1.5rem;
+      box-shadow: 0 25px 50px rgba($color-darkest, 0.4);
+      position: relative;
+
+      // Efeito glass sutil
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba($color-primary, 0.05),
+          transparent
+        );
+        z-index: 1;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      @include respond-to($bp-tablet) {
+        box-shadow: 0 30px 60px rgba($color-darkest, 0.5);
+      }
+    }
+
+    &-track {
+      display: flex;
+      @include transition(0.6s);
+      will-change: transform;
+    }
+
+    &-slide {
+      min-width: 100%;
+      position: relative;
+    }
+  }
+
+  // =============================================================================
+  // IMAGENS DO ESTÚDIO - ASPECT RATIO CORRIGIDO
+  // =============================================================================
+  &__image {
+    &-container {
+      position: relative;
+      // ASPECT RATIO AJUSTADO para imagens mais quadradas/verticais
+      aspect-ratio: 4/3; // Mobile - mais quadrado
+      overflow: hidden;
+
+      @include respond-to($bp-tablet) {
+        aspect-ratio: 3/2; // Tablet - proporção média
+      }
+
+      @include respond-to($bp-desktop) {
+        aspect-ratio: 16/10; // Desktop - mais wide mas não muito
+      }
+
+      // Para telas muito grandes, limitar altura
+      @include respond-to($bp-large) {
+        max-height: 600px;
+      }
+    }
+
+    &-img,
+    &__image {
+      width: 100%;
+      height: 100%;
+      // OBJECT-FIT ajustado para melhor visualização
+      object-fit: cover;
+      object-position: center; // Centraliza a imagem
+      @include transition(0.8s);
+      
+      // Melhora a qualidade da renderização
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+
+    &-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        to top,
+        rgba($color-darkest, 0.95) 0%,
+        rgba($color-darkest, 0.7) 40%,
+        transparent 100%
+      );
+      padding: 2rem;
+      color: $color-primary;
+      @include transition(0.5s);
+
+      @include respond-to($bp-tablet) {
+        padding: 3rem;
+        opacity: 0.9;
+      }
+
+      // Sempre visível em mobile
+      @media (max-width: $bp-tablet - 1px) {
+        opacity: 1;
+      }
+    }
+
+    &-content {
+      max-width: 500px;
+    }
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: $color-primary;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-description {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: $color-gray-light;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    &-highlight {
+      display: inline-block;
+      background: rgba($color-primary, 0.15);
+      color: $color-primary;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba($color-primary, 0.2);
+
+      @include respond-to($bp-tablet) {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  }
+
+  // Hover effects - SUAVIZADOS
+  &__carousel-slide:hover {
+    .studio__image {
+      transform: scale(1.03); // Reduzido para evitar crop excessivo
+    }
+    
+    .studio__image-overlay {
+      opacity: 1;
+    }
+  }
+
+  // =============================================================================
+  // BOTÕES DE NAVEGAÇÃO
+  // =============================================================================
+  &__carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include glass-effect;
+    border: 1px solid rgba($color-primary, 0.2);
+    color: $color-primary;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    @include flex-center;
+    cursor: pointer;
+    @include transition();
+    z-index: 10;
+
+    @include respond-to($bp-tablet) {
+      width: 60px;
+      height: 60px;
+    }
+
+    &:hover {
+      background: rgba($color-primary, 0.2);
+      border-color: rgba($color-primary, 0.4);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 25px rgba($color-primary, 0.2);
+    }
+
+    &--prev {
+      left: 10px;
+
+      @include respond-to($bp-tablet) {
+        left: -30px;
+      }
+    }
+
+    &--next {
+      right: 10px;
+
+      @include respond-to($bp-tablet) {
+        right: -30px;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+  // =============================================================================
+  // INDICADORES
+  // =============================================================================
+  &__carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+
+    @include respond-to($bp-tablet) {
+      margin-top: 2.5rem;
+      padding: 0;
+    }
+  }
+
+  &__carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba($color-primary, 0.3);
+    background: transparent;
+    cursor: pointer;
+    @include transition();
+    position: relative;
+
+    @include respond-to($bp-tablet) {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      border-color: rgba($color-primary, 0.6);
+    }
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 4px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &--active {
+      background: $color-primary;
+      border-color: $color-primary;
+      transform: scale(1.3);
+      box-shadow: 0 0 10px rgba($color-primary, 0.4);
+    }
+  }
+
+  // =============================================================================
+  // FACILIDADES E DIFERENCIAIS
+  // =============================================================================
+  &__features {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    @include respond-to($bp-tablet) {
+      margin-bottom: 5rem;
+    }
+
+    &-title {
+      font-size: 2rem;
+      color: $color-primary;
+      margin-bottom: 3rem;
+      font-weight: 600;
+
+      @include respond-to($bp-tablet) {
+        font-size: 2.25rem;
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    &-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+
+      @include respond-to($bp-tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+    }
+  }
+
+  &__feature {
+    &-card {
+      @include glass-effect;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      @include transition();
+      border: 1px solid rgba($color-primary, 0.1);
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: rgba($color-primary, 0.2);
+        background: rgba($color-primary, 0.08);
+        box-shadow: 0 15px 30px rgba($color-darkest, 0.3);
+      }
+
+      @include respond-to($bp-tablet) {
+        padding: 2.5rem;
+      }
+    }
+
+    &-icon {
+      @include flex-center;
+      width: 60px;
+      height: 60px;
+      background: rgba($color-primary, 0.1);
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      color: $color-primary;
+      @include transition();
+
+      @include respond-to($bp-tablet) {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-card:hover &-icon {
+      background: rgba($color-primary, 0.2);
+      transform: scale(1.1);
+    }
+
+    &-title {
+      font-size: 1.25rem;
+      color: $color-primary;
+      margin-bottom: 1rem;
+      font-weight: 600;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-description {
+      color: $color-gray-light;
+      line-height: 1.6;
+      font-size: 1rem;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.05rem;
+      }
+    }
+  }
+
+  // =============================================================================
+  // CALL TO ACTION
+  // =============================================================================
+  &__cta {
+    text-align: center;
+    @include glass-effect;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba($color-primary, 0.15);
+    background: rgba($color-primary, 0.03);
+    max-width: 600px;
+    margin: 0 auto;
+
+    @include respond-to($bp-tablet) {
+      padding: 3.5rem 3rem;
+    }
+
+    &-title {
+      font-size: 1.75rem;
+      color: $color-primary;
+      margin-bottom: 1rem;
+      font-weight: 600;
+
+      @include respond-to($bp-tablet) {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    &-description {
+      color: $color-gray-light;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &-button {
+      @include button-whatsapp;
+      @include flex-center;
+      gap: 0.75rem;
+      font-size: 1.1rem;
+      padding: 1.25rem 2.5rem;
+      border-radius: 0.75rem;
+      position: relative;
+      overflow: hidden;
+
+      // Efeito shimmer
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba($color-primary, 0.2),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      &:hover::before {
+        left: 100%;
+      }
+
+      @include respond-to($bp-tablet) {
+        font-size: 1.2rem;
+        padding: 1.4rem 3rem;
+      }
+
+      svg {
+        @include transition();
+      }
+
+      &:hover svg {
+        transform: scale(1.1) rotate(5deg);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// ANIMAÇÕES ESPECÍFICAS
+// =============================================================================
+
+@keyframes fadeInStudio {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Aplicar animações sequenciais
+.studio__header {
+  animation: fadeInStudio 0.8s ease-out 0.1s both;
+}
+
+.studio__gallery {
+  animation: fadeInStudio 0.8s ease-out 0.3s both;
+}
+
+.studio__features {
+  animation: fadeInStudio 0.8s ease-out 0.5s both;
+}
+
+.studio__cta {
+  animation: fadeInStudio 0.8s ease-out 0.7s both;
+}

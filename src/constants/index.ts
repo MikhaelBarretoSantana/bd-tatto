@@ -61,6 +61,57 @@ export const NAVIGATION_ITEMS = [
   { id: "home", label: "Início" },
   { id: "about", label: "Sobre" },
   { id: "portfolio", label: "Portfolio" },
+  { id: "studio", label: "Estúdio" },
   { id: "contact", label: "Contato" },
   { id: "location", label: "Localização" },
+];
+
+// =============================================================================
+// DADOS DO ESTÚDIO - NOVOS
+// =============================================================================
+export interface StudioImage {
+  src: string;
+  title: string;
+  description: string;
+  highlight: string;
+}
+
+export interface StudioFeature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export const STUDIO_IMAGES: StudioImage[] = [
+  {
+    src: "/img/studio/studio-1.jpeg",
+    title: "Ambiente Principal",
+    description:
+      "Estúdio moderno e acolhedor, pensado para seu conforto e tranquilidade durante toda a sessão.",
+    highlight: "Equipamentos de última geração",
+  },
+  {
+    src: "/img/studio/studio-2.jpeg",
+    title: "Área de Trabalho",
+    description:
+      "Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.",
+    highlight: "Ambiente 100% esterilizado",
+  },
+];
+
+export const STUDIO_FEATURES = [
+  {
+    title: "Biossegurança Total",
+    description:
+      "Protocolos rigorosos de esterilização e materiais descartáveis",
+  },
+  {
+    title: "Equipamentos Premium",
+    description: "Máquinas profissionais e tintas de primeira qualidade",
+  },
+  {
+    title: "Ambiente Acolhedor",
+    description:
+      "Espaço pensado para proporcionar máximo conforto e relaxamento",
+  },
 ];

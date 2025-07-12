@@ -1,4 +1,4 @@
-// 🚀 Componente principal - Refatorado e organizado
+// 🚀 Componente principal - Refatorado e organizado com Studio
 
 import React from "react";
 import { ToastContainer } from "react-toastify";
@@ -9,6 +9,7 @@ import {
   Hero,
   About,
   Portfolio,
+  Studio,
   Contact,
   MapSection,
   Footer,
@@ -21,6 +22,7 @@ import "./App.scss";
 /**
  * Componente principal da aplicação BD Tattoo
  * Refatorado em componentes modulares e reutilizáveis
+ * Agora incluindo o showcasing do estúdio físico
  */
 const BDTattooLanding: React.FC = () => {
   // Carrega fontes do Google automaticamente
@@ -36,6 +38,7 @@ const BDTattooLanding: React.FC = () => {
       <Hero />
       <About />
       <Portfolio />
+      <Studio />
       <Contact />
       <MapSection />
       <Footer />

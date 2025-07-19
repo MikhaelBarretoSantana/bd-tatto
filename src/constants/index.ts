@@ -83,19 +83,26 @@ export interface StudioFeature {
 }
 
 export const STUDIO_IMAGES: StudioImage[] = [
+  // {
+  //   src: "/img/studio/studio-3.jpeg",
+  //   title: "Ambiente Principal",
+  //   description:
+  //     "Estúdio moderno e acolhedor, pensado para seu conforto e tranquilidade durante toda a sessão.",
+  //   highlight: "Equipamentos de última geração",
+  // },
   {
-    src: "/img/studio/studio-1.jpeg",
-    title: "Ambiente Principal",
-    description:
-      "Estúdio moderno e acolhedor, pensado para seu conforto e tranquilidade durante toda a sessão.",
-    highlight: "Equipamentos de última geração",
-  },
-  {
-    src: "/img/studio/studio-2.jpeg",
+    src: "/img/studio/studio-3.jpeg",
     title: "Área de Trabalho",
     description:
       "Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.",
     highlight: "Ambiente 100% esterilizado",
+  },
+  {
+    src: "/img/studio/studio-4.jpeg",
+    title: "Localização Premium",
+    description:
+      "Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.",
+    highlight: "Centro histórico de Braga",
   },
 ];
 

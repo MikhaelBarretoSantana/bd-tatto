@@ -6,7 +6,7 @@ import { openWhatsApp } from "../../utils";
 
 /**
  * Seção de localização do estúdio
- * Inclui mapa do Google, endereço, horários e botão de agendamento
+ * Inclui mapa do Google, endereço e botão de agendamento
  */
 const MapSection: React.FC = () => {
   return (
@@ -20,8 +20,8 @@ const MapSection: React.FC = () => {
 
         <div className="map-section__content">
           <div className="map-section__info">
-            <div className="map-section__address">
-              <h3>Endereço Completo</h3>
+            <div className="map-section__location">
+              <h3>Localização</h3>
               <p>
                 Av. da Liberdade, 666
                 <br />
@@ -30,24 +30,16 @@ const MapSection: React.FC = () => {
                 4710-249
               </p>
             </div>
-            <div className="map-section__hours">
-              <h3>Horário de Funcionamento</h3>
-              <div className="map-section__schedule">
-                <div>Terça a Sexta: 10h - 18h</div>
-                <div>Sábados: 10h - 13h</div>
-                <div>Domingos: Fechado</div>
-              </div>
-            </div>
 
             <button
               onClick={() =>
                 openWhatsApp("Olá! Gostaria de agendar uma visita ao estúdio.")
               }
               className="map-section__cta"
-              title="Agendar Visita pelo WhatsApp"
+              title="Agendar pelo WhatsApp"
             >
               <WhatsAppIcon size={20} />
-              Agendar Visita
+              Agendar pelo WhatsApp
             </button>
           </div>
 

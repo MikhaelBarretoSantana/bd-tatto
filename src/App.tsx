@@ -3,6 +3,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Analytics } from "@vercel/analytics/react"
 
 import {
   Header,
@@ -60,6 +61,8 @@ const BDTattooLanding: React.FC = () => {
           fontFamily: "Inter, Arial, sans-serif",
         }}
       />
+
+      <Analytics/>
     </div>
   );
 };

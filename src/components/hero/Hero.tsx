@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <h2 className="hero__subtitle">Transformando Pele em Arte Atemporal</h2>
+        <h2 className="hero__subtitle">Eternizando traços e histórias</h2>
 
         <p className="hero__description">
           Mais de 5 anos criando tatuagens únicas e sofisticadas. Cada traço é

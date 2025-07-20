@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         <div className="contact__info">
           <div className="contact__info-item">
             <MapPin size={20} />
-            <span>Rua da Arte, 123 - Centro</span>
+            <span>Av. da Liberdade, 666 - Braga</span>
           </div>
           <div className="contact__info-item">
             <Phone size={20} />

@@ -99,7 +99,7 @@ export const STUDIO_IMAGES: StudioImage[] = [
   },
   {
     src: "/img/studio/studio-4.jpeg",
-    title: "Localização Premium",
+    title: "Onde Braga Pulsa",
     description:
       "Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.",
     highlight: "Centro histórico de Braga",

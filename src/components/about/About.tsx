@@ -15,8 +15,8 @@ const About: React.FC = () => {
             <h2 className="about__title">O Artista</h2>
             <div className="about__description">
               <p>
-                Sou <strong>Brian Datas</strong>, tatuador profissional há quase
-                6 anos, mas minha relação com a arte vai muito além das agulhas.{" "}
+                Sou <strong>Brian Dantas</strong>, tatuador profissional há mais
+                de 5 anos, mas minha relação com a arte vai muito além das agulhas.{" "}
                 <strong>Engenheiro de formação</strong>, encontrei na tatuagem o
                 espaço perfeito para unir técnica, precisão e criatividade.
               </p>
@@ -27,7 +27,7 @@ const About: React.FC = () => {
               </p>
               <p>
                 Valorizo profundamente o <strong>atendimento humanizado</strong>
-                , o conforto de cada pessoa que passa pela minha cadeira e,
+                , o conforto de cada pessoa que passa pela minha marquesa e,
                 acima de tudo, a <strong>biossegurança e higiene</strong> em
                 todo o processo.
               </p>

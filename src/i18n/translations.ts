@@ -129,7 +129,7 @@ const pt: Translation = {
   },
   contact: {
     title: 'Agende Sua Sessão',
-    address: 'Av. da Liberdade, 666 - Braga',
+    address: 'Av. da Liberdade, 666 - 1ª Andar, Braga',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -282,7 +282,7 @@ const en: Translation = {
   },
   contact: {
     title: 'Schedule Your Session',
-    address: 'Av. da Liberdade, 666 - Braga',
+    address: 'Av. da Liberdade, 666 -  1st floor, Braga',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -435,7 +435,7 @@ const es: Translation = {
   },
   contact: {
     title: 'Agenda Tu Sesión',
-    address: 'Av. da Liberdade, 666 - Braga',
+    address: 'Av. da Liberdade, 666 - 1º piso, Braga',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -588,7 +588,7 @@ const fr: Translation = {
   },
   contact: {
     title: 'Planifiez Votre Séance',
-    address: 'Av. da Liberdade, 666 - Braga',
+    address: 'Av. da Liberdade, 666 - 1er étage, Braga',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {

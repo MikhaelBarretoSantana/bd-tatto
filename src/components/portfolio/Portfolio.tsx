@@ -1,15 +1,20 @@
-// 🎨 Galeria de trabalhos com carrossel interativo
+// components/portfolio/Portfolio.tsx
+// 🎨 Galeria de trabalhos com carrossel interativo - Descrições traduzidas
 
 import React from "react";
 import { ChevronLeft, ChevronRight, Instagram } from "lucide-react";
 import { useCarousel } from "../../hooks/useCarousel";
+import { useI18n } from "../../i18n/I18nContext";
 import { PORTFOLIO_IMAGES } from "../../constants";
 
 /**
  * Componente Portfolio com carrossel completo
  * Inclui navegação por touch, teclado, auto-play e indicadores
+ * Agora com tradução dinâmica das categorias E descrições
  */
 const Portfolio: React.FC = () => {
+  const { t, formatMessage } = useI18n();
+  
   const {
     currentSlide,
     isPaused,
@@ -22,13 +27,39 @@ const Portfolio: React.FC = () => {
     onTouchEnd,
   } = useCarousel({ totalSlides: PORTFOLIO_IMAGES.length });
 
+  // Função para traduzir categoria do portfolio
+  const translateCategory = (category: string): string => {
+    const categoryMap: { [key: string]: keyof typeof t.portfolioCategories } = {
+      'Fine Line': 'fineLine',
+      'Realismo': 'realism',
+      'Ver Mais': 'realism', // Fallback para "Ver Mais"
+    };
+    
+    const translationKey = categoryMap[category];
+    return translationKey ? t.portfolioCategories[translationKey] : category;
+  };
+
+  // Função para traduzir descrições do portfolio
+  const translateDescription = (originalDescription: string, category: string): string => {
+    // Mapeamento das descrições originais para chaves de tradução
+    const descriptionMap: { [key: string]: string } = {
+      'Traços delicados e minimalistas': t.portfolio.descriptions?.fineLine1 || 'Traços delicados e minimalistas',
+      'Detalhes hiper-realistas com sombreado profissional': t.portfolio.descriptions?.realism1 || 'Detalhes hiper-realistas com sombreado profissional',
+      'Linhas finas e precisas com elegância': t.portfolio.descriptions?.fineLine2 || 'Linhas finas e precisas com elegância',
+      'Texturas realistas e profundidade visual': t.portfolio.descriptions?.realism2 || 'Texturas realistas e profundidade visual',
+      'Arte sutil com traços refinados': t.portfolio.descriptions?.fineLine3 || 'Arte sutil com traços refinados',
+      'Técnica realista com riqueza de detalhes': t.portfolio.descriptions?.realism3 || 'Técnica realista com riqueza de detalhes',
+      'Confira todos os nossos trabalhos': t.portfolio.instagram.description,
+    };
+
+    return descriptionMap[originalDescription] || originalDescription;
+  };
+
   return (
     <section id="portfolio" className="portfolio">
       <div className="portfolio__container">
-        <h2 className="portfolio__title">Portfolio</h2>
-        <p className="portfolio__subtitle">
-          Alguns dos nossos trabalhos mais recentes
-        </p>
+        <h2 className="portfolio__title">{t.portfolio.title}</h2>
+        <p className="portfolio__subtitle">{t.portfolio.subtitle}</p>
 
         <div className="portfolio__carousel">
           <div
@@ -39,18 +70,17 @@ const Portfolio: React.FC = () => {
             onTouchEnd={() => setIsPaused(false)}
             tabIndex={0}
             role="region"
-            aria-label="Galeria de fotos do portfolio"
+            aria-label={t.portfolio.title}
             aria-describedby="portfolio-instructions"
           >
             <div id="portfolio-instructions" className="visually-hidden">
-              Use as setas do teclado para navegar entre as imagens, ou deslize
-              o dedo em dispositivos touch
+              {t.portfolio.instructions}
             </div>
 
             <button
               className="portfolio__carousel-btn portfolio__carousel-btn--prev"
               onClick={prevSlide}
-              aria-label="Imagem anterior"
+              aria-label={t.portfolio.prevButton}
             >
               <ChevronLeft size={20} />
             </button>
@@ -65,9 +95,10 @@ const Portfolio: React.FC = () => {
                 className="portfolio__carousel-track"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 role="group"
-                aria-label={`Slide ${currentSlide + 1} de ${
-                  PORTFOLIO_IMAGES.length
-                }`}
+                aria-label={formatMessage(t.portfolio.slideIndicator, {
+                  current: currentSlide + 1,
+                  total: PORTFOLIO_IMAGES.length
+                })}
               >
                 {PORTFOLIO_IMAGES.map((item, index) => (
                   <div
@@ -76,7 +107,6 @@ const Portfolio: React.FC = () => {
                     aria-hidden={index !== currentSlide ? "true" : "false"}
                   >
                     {item.type === "instagram" ? (
-                      // Slide especial do Instagram
                       <div className="portfolio__carousel-instagram">
                         <div className="portfolio__carousel-instagram-bg">
                           <img
@@ -91,10 +121,10 @@ const Portfolio: React.FC = () => {
                                 className="portfolio__carousel-instagram-icon"
                               />
                               <h3 className="portfolio__carousel-instagram-title">
-                                {item.category}
+                                {t.portfolio.instagram.title}
                               </h3>
                               <p className="portfolio__carousel-instagram-description">
-                                {item.description}
+                                {t.portfolio.instagram.description}
                               </p>
                               <a
                                 href={item.link}
@@ -104,28 +134,27 @@ const Portfolio: React.FC = () => {
                                 tabIndex={index === currentSlide ? 0 : -1}
                               >
                                 <Instagram size={18} />
-                                Seguir no Instagram
+                                {t.portfolio.instagram.followButton}
                               </a>
                             </div>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      // Slides normais de imagem
                       <div className="portfolio__carousel-image">
                         <img
                           src={item.src}
-                          alt={`${item.category}: ${item.description}`}
+                          alt={`${translateCategory(item.category)}: ${translateDescription(item.description, item.category)}`}
                           className="portfolio__carousel-img"
                           loading={index === 0 ? "eager" : "lazy"}
                         />
                         <div className="portfolio__carousel-overlay">
                           <div className="portfolio__carousel-content">
                             <h3 className="portfolio__carousel-category">
-                              {item.category}
+                              {translateCategory(item.category)}
                             </h3>
                             <p className="portfolio__carousel-description">
-                              {item.description}
+                              {translateDescription(item.description, item.category)}
                             </p>
                           </div>
                         </div>
@@ -139,17 +168,16 @@ const Portfolio: React.FC = () => {
             <button
               className="portfolio__carousel-btn portfolio__carousel-btn--next"
               onClick={nextSlide}
-              aria-label="Próxima imagem"
+              aria-label={t.portfolio.nextButton}
             >
               <ChevronRight size={20} />
             </button>
           </div>
 
-          {/* Indicadores */}
           <div
             className="portfolio__carousel-indicators"
             role="tablist"
-            aria-label="Navegação do portfolio"
+            aria-label={t.portfolio.title}
           >
             {PORTFOLIO_IMAGES.map((_, index) => (
               <button
@@ -162,7 +190,7 @@ const Portfolio: React.FC = () => {
                 onClick={() => goToSlide(index)}
                 role="tab"
                 aria-selected={index === currentSlide}
-                aria-label={`Ir para slide ${index + 1}`}
+                aria-label={formatMessage(t.accessibility.goToSlide, { number: index + 1 })}
               />
             ))}
           </div>

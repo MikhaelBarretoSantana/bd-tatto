@@ -1,4 +1,5 @@
-// 🚀 Componente principal - Refatorado e organizado com Studio
+// App.tsx
+// 🚀 Componente principal - Refatorado com internacionalização completa
 
 import React from "react";
 import { ToastContainer } from "react-toastify";
@@ -18,54 +19,58 @@ import {
   WhatsAppFloat,
 } from "./components";
 import { useGoogleFonts } from "./hooks/useGoogleFonts";
+import { I18nProvider } from "./i18n/I18nContext";
 
 import "./App.scss";
 
 /**
  * Componente principal da aplicação BD Tattoo
  * Refatorado em componentes modulares e reutilizáveis
- * Agora incluindo o showcasing do estúdio físico
+ * Agora com suporte completo a internacionalização (i18n)
+ * Suporta: Português, Inglês, Espanhol e Francês
  */
 const BDTattooLanding: React.FC = () => {
   // Carrega fontes do Google automaticamente
   useGoogleFonts();
 
   return (
-    <div className="bd-tattoo">
-      {/* Botão flutuante do WhatsApp */}
-      <WhatsAppFloat />
+    <I18nProvider>
+      <div className="bd-tattoo">
+        {/* Botão flutuante do WhatsApp */}
+        <WhatsAppFloat />
 
-      {/* Estrutura principal da página */}
-      <Header />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Studio />
-      <Contact />
-      <MapSection />
-      <Footer />
+        {/* Estrutura principal da página */}
+        <Header />
+        <Hero />
+        <About />
+        <Portfolio />
+        <Studio />
+        <Contact />
+        <MapSection />
+        <Footer />
 
-      {/* Sistema de notificações */}
-      <ToastContainer
-        position="top-left"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-        style={{
-          fontSize: "14px",
-          fontFamily: "Inter, Arial, sans-serif",
-        }}
-      />
+        {/* Sistema de notificações */}
+        <ToastContainer
+          position="top-left"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          style={{
+            fontSize: "14px",
+            fontFamily: "Inter, Arial, sans-serif",
+          }}
+        />
 
-      <SpeedInsights />
-      <Analytics />
-    </div>
+        <SpeedInsights />
+        <Analytics />
+      </div>
+    </I18nProvider>
   );
 };
 

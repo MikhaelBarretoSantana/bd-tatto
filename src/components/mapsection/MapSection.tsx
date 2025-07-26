@@ -1,7 +1,7 @@
-// 🗺️ Seção de localização com mapa e informações
 
 import React from "react";
 import WhatsAppIcon from "../WhatsAppIcon/WhatsAppIcon";
+import { useI18n } from "../../i18n/I18nContext";
 import { openWhatsApp } from "../../utils";
 
 /**
@@ -9,37 +9,32 @@ import { openWhatsApp } from "../../utils";
  * Inclui mapa do Google, endereço e botão de agendamento
  */
 const MapSection: React.FC = () => {
+  const { t } = useI18n();
+
+  const handleScheduleClick = () => {
+    openWhatsApp(t.whatsapp.studioVisitMessage);
+  };
+
   return (
     <section id="location" className="map-section">
       <div className="map-section__container">
-        <h2 className="map-section__title">Nossa Localização</h2>
-        <p className="map-section__description">
-          Venha nos visitar no nosso estúdio. Estamos localizados em um ambiente
-          acolhedor e profissional.
-        </p>
+        <h2 className="map-section__title">{t.map.title}</h2>
+        <p className="map-section__description">{t.map.description}</p>
 
         <div className="map-section__content">
           <div className="map-section__info">
             <div className="map-section__location">
-              <h3>Localização</h3>
-              <p>
-                Av. da Liberdade, 666
-                <br />
-                Braga - Portugal
-                <br />
-                4710-249
-              </p>
+              <h3>{t.map.locationTitle}</h3>
+              <p style={{ whiteSpace: 'pre-line' }}>{t.map.address}</p>
             </div>
 
             <button
-              onClick={() =>
-                openWhatsApp("Olá! Gostaria de agendar uma visita ao estúdio.")
-              }
+              onClick={handleScheduleClick}
               className="map-section__cta"
-              title="Agendar pelo WhatsApp"
+              title={t.map.ctaTitle}
             >
               <WhatsAppIcon size={20} />
-              Agendar pelo WhatsApp
+              {t.map.ctaButton}
             </button>
           </div>
 
@@ -49,7 +44,7 @@ const MapSection: React.FC = () => {
               className="google-map-iframe"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Localização BD Tattoo Studio"
+              title={t.map.mapTitle}
             ></iframe>
           </div>
         </div>

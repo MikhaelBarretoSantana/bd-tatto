@@ -1,4 +1,5 @@
-// 🏢 Showcasing do estúdio físico - Tour virtual elegante
+// components/studio/Studio.tsx
+// 🏢 Showcasing do estúdio físico - Textos originais + tradução
 
 import React from "react";
 import {
@@ -10,34 +11,36 @@ import {
   MapPin,
 } from "lucide-react";
 import { useCarousel } from "../../hooks/useCarousel";
+import { useI18n } from "../../i18n/I18nContext";
 import { openWhatsApp } from "../../utils";
 import { STUDIO_IMAGES } from "../../constants";
-
-const STUDIO_FEATURES = [
-  {
-    icon: Shield,
-    title: "Biossegurança Total",
-    description:
-      "Protocolos rigorosos de esterilização e materiais descartáveis",
-  },
-  {
-    icon: Sparkles,
-    title: "Equipamentos Premium",
-    description: "Máquinas profissionais e tintas de primeira qualidade",
-  },
-  {
-    icon: Heart,
-    title: "Ambiente Acolhedor",
-    description:
-      "Espaço pensado para proporcionar máximo conforto e relaxamento",
-  },
-];
 
 /**
  * Componente Studio - Showcasing do estúdio físico
  * Galeria interativa + facilidades + call-to-action
+ * CORRIGIDO: Mantém textos originais das imagens do constants + tradução
  */
 const Studio: React.FC = () => {
+  const { t } = useI18n();
+  
+  const STUDIO_FEATURES = [
+    {
+      icon: Shield,
+      title: t.studio.features.biosafety.title,
+      description: t.studio.features.biosafety.description,
+    },
+    {
+      icon: Sparkles,
+      title: t.studio.features.equipment.title,
+      description: t.studio.features.equipment.description,
+    },
+    {
+      icon: Heart,
+      title: t.studio.features.environment.title,
+      description: t.studio.features.environment.description,
+    },
+  ];
+
   const {
     currentSlide,
     isPaused,
@@ -51,24 +54,38 @@ const Studio: React.FC = () => {
   } = useCarousel({ totalSlides: STUDIO_IMAGES.length });
 
   const handleVisitRequest = () => {
-    openWhatsApp(
-      "Olá! Gostaria de agendar uma visita para conhecer o estúdio. Quando seria possível?"
-    );
+    openWhatsApp(t.whatsapp.studioVisitMessage);
+  };
+
+  // Função para traduzir os textos das imagens do estúdio
+  const translateStudioImageText = (originalText: string, type: 'title' | 'description' | 'highlight'): string => {
+    const translationMap: { [key: string]: string } = {
+      // Títulos
+      'Área de Trabalho': t.studio.images.workspace?.title || 'Área de Trabalho',
+      'Onde Braga Pulsa': t.studio.images.location?.title || 'Onde Braga Pulsa',
+      
+      // Descrições
+      'Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.': 
+        t.studio.images.workspace?.description || 'Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.',
+      'Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.':
+        t.studio.images.location?.description || 'Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.',
+      
+      // Highlights
+      'Ambiente 100% esterilizado': t.studio.images.workspace?.highlight || 'Ambiente 100% esterilizado',
+      'Centro histórico de Braga': t.studio.images.location?.highlight || 'Centro histórico de Braga',
+    };
+
+    return translationMap[originalText] || originalText;
   };
 
   return (
     <section id="studio" className="studio">
       <div className="studio__container">
-        {/* Cabeçalho da seção */}
         <div className="studio__header">
-          <h2 className="studio__title">Conheça Nosso Estúdio</h2>
-          <p className="studio__subtitle">
-            Um ambiente profissional, seguro e acolhedor, pensado especialmente
-            para você
-          </p>
+          <h2 className="studio__title">{t.studio.title}</h2>
+          <p className="studio__subtitle">{t.studio.subtitle}</p>
         </div>
 
-        {/* Galeria do estúdio */}
         <div className="studio__gallery">
           <div
             className="studio__carousel-container"
@@ -78,12 +95,12 @@ const Studio: React.FC = () => {
             onTouchEnd={() => setIsPaused(false)}
             tabIndex={0}
             role="region"
-            aria-label="Galeria de fotos do estúdio"
+            aria-label={t.studio.title}
           >
             <button
               className="studio__carousel-btn studio__carousel-btn--prev"
               onClick={prevSlide}
-              aria-label="Foto anterior do estúdio"
+              aria-label={t.accessibility.previousImage}
             >
               <ChevronLeft size={24} />
             </button>
@@ -107,18 +124,20 @@ const Studio: React.FC = () => {
                     <div className="studio__image-container">
                       <img
                         src={image.src}
-                        alt={`${image.title} - BD Tattoo Studio`}
+                        alt={`${translateStudioImageText(image.title, 'title')} - BD Tattoo Studio`}
                         className="studio__image"
                         loading={index === 0 ? "eager" : "lazy"}
                       />
                       <div className="studio__image-overlay">
                         <div className="studio__image-content">
-                          <h3 className="studio__image-title">{image.title}</h3>
+                          <h3 className="studio__image-title">
+                            {translateStudioImageText(image.title, 'title')}
+                          </h3>
                           <p className="studio__image-description">
-                            {image.description}
+                            {translateStudioImageText(image.description, 'description')}
                           </p>
                           <span className="studio__image-highlight">
-                            {image.highlight}
+                            {translateStudioImageText(image.highlight, 'highlight')}
                           </span>
                         </div>
                       </div>
@@ -131,13 +150,12 @@ const Studio: React.FC = () => {
             <button
               className="studio__carousel-btn studio__carousel-btn--next"
               onClick={nextSlide}
-              aria-label="Próxima foto do estúdio"
+              aria-label={t.accessibility.nextImage}
             >
               <ChevronRight size={24} />
             </button>
           </div>
 
-          {/* Indicadores */}
           <div className="studio__carousel-indicators">
             {STUDIO_IMAGES.map((_, index) => (
               <button
@@ -154,9 +172,8 @@ const Studio: React.FC = () => {
           </div>
         </div>
 
-        {/* Facilidades e diferenciais */}
         <div className="studio__features">
-          <h3 className="studio__features-title">Nossos Diferenciais</h3>
+          <h3 className="studio__features-title">{t.studio.featuresTitle}</h3>
           <div className="studio__features-grid">
             {STUDIO_FEATURES.map((feature, index) => (
               <div key={index} className="studio__feature-card">
@@ -172,15 +189,12 @@ const Studio: React.FC = () => {
           </div>
         </div>
 
-        {/* Call to action */}
         <div className="studio__cta">
-          <h3 className="studio__cta-title">Venha Conhecer Pessoalmente</h3>
-          <p className="studio__cta-description">
-            Agende uma visita e veja de perto onde sua arte será criada
-          </p>
+          <h3 className="studio__cta-title">{t.studio.ctaTitle}</h3>
+          <p className="studio__cta-description">{t.studio.ctaDescription}</p>
           <button onClick={handleVisitRequest} className="studio__cta-button">
             <MapPin size={20} />
-            Agendar Visita ao Estúdio
+            {t.studio.ctaButton}
           </button>
         </div>
       </div>

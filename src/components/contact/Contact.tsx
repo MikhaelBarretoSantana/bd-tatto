@@ -1,36 +1,38 @@
-// src/components/Contact/Contact.tsx
-// 📧 Formulário de contato com validação e integração WhatsApp
+// components/contact/Contact.tsx
+// 📧 Formulário de contato com validação e integração WhatsApp - Internacionalizado
 
 import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { useContactForm } from "../../hooks/useContactForm";
-import { CONTACT_INFO } from "../../constants";
+import { useI18n } from "../../i18n/I18nContext";
 
 /**
  * Seção de contato com formulário inteligente
  * Validação em tempo real e envio direto para WhatsApp
+ * Agora com suporte completo a múltiplos idiomas
  */
 const Contact: React.FC = () => {
+  const { t } = useI18n();
   const { formData, formValidation, handleInputChange, handleFormSubmit } =
     useContactForm();
 
   return (
     <section id="contact" className="contact">
       <div className="contact__container">
-        <h2 className="contact__title">Agende Sua Sessão</h2>
+        <h2 className="contact__title">{t.contact.title}</h2>
 
         <div className="contact__info">
           <div className="contact__info-item">
             <MapPin size={20} />
-            <span>Av. da Liberdade, 666 - Braga</span>
+            <span>{t.contact.address}</span>
           </div>
           <div className="contact__info-item">
             <Phone size={20} />
-            <span>+351 911 565 927</span>
+            <span>{t.contact.phone}</span>
           </div>
           <div className="contact__info-item">
             <Mail size={20} />
-            <span>{CONTACT_INFO.email}</span>
+            <span>{t.contact.email}</span>
           </div>
         </div>
 
@@ -38,47 +40,47 @@ const Contact: React.FC = () => {
           <div className="contact__form-row">
             <input
               type="text"
-              placeholder="Seu Nome Completo"
+              placeholder={t.contact.form.namePlaceholder}
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
               className="contact__form-input"
-              aria-label="Nome completo"
+              aria-label={t.contact.form.nameLabel}
             />
             <input
               type="email"
-              placeholder="seu.email@exemplo.com"
+              placeholder={t.contact.form.emailPlaceholder}
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
               className={`contact__form-input ${
                 !formValidation.emailValid ? "contact__form-input--error" : ""
               }`}
-              aria-label="Email"
+              aria-label={t.contact.form.emailLabel}
               aria-invalid={!formValidation.emailValid}
             />
           </div>
           <input
             type="tel"
-            placeholder="Número de telefone (apenas números)"
+            placeholder={t.contact.form.phonePlaceholder}
             value={formData.phone}
             onChange={(e) => handleInputChange("phone", e.target.value)}
             className={`contact__form-input contact__form-input--full ${
               !formValidation.phoneValid ? "contact__form-input--error" : ""
             }`}
-            aria-label="Telefone"
+            aria-label={t.contact.form.phoneLabel}
             aria-invalid={!formValidation.phoneValid}
           />
           <div className="contact__form-textarea-wrapper">
             <textarea
-              placeholder="Descreva sua ideia de tatuagem (estilo, tamanho, localização no corpo, referências...)"
+              placeholder={t.contact.form.messagePlaceholder}
               rows={5}
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
               className="contact__form-textarea"
               maxLength={500}
-              aria-label="Descrição da ideia de tatuagem"
+              aria-label={t.contact.form.messageLabel}
             />
             <div className="contact__form-counter">
-              {formData.message.length}/500 caracteres
+              {formData.message.length}/500 {t.contact.form.characterCount}
             </div>
           </div>
           <button
@@ -86,7 +88,7 @@ const Contact: React.FC = () => {
             className="contact__form-submit contact__form-submit--whatsapp"
             type="button"
           >
-            Enviar via WhatsApp
+            {t.contact.form.submitButton}
           </button>
         </div>
       </div>

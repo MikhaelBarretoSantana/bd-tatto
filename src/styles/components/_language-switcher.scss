@@ -1,0 +1,241 @@
+// styles/components/_language-switcher.scss
+// 🌍 Estilos do seletor de idiomas
+
+.language-switcher {
+  position: relative;
+  display: inline-block;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &--open {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &__icon {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__current {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__flag {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__name {
+    font-weight: 500;
+    color: white;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+    animation: fadeInScale 0.2s ease-out;
+
+    @media (max-width: 768px) {
+      right: auto;
+      left: 0;
+      min-width: 180px;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    gap: 12px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &--active {
+      background: rgba(255, 255, 255, 0.15);
+      
+      .language-switcher__option-native {
+        color: #00d4aa;
+      }
+    }
+  }
+
+  &__option-flag {
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  &__option-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__option-native {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    transition: color 0.2s ease;
+  }
+
+  &__option-name {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__option-check {
+    color: #00d4aa;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+}
+
+// Animação para o dropdown
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Estilos específicos para o header
+.header {
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      gap: 12px;
+    }
+  }
+
+  &__mobile-language {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 16px;
+
+    .language-switcher__trigger {
+      width: 100%;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .language-switcher__name {
+      display: block;
+    }
+
+    .language-switcher__dropdown {
+      position: static;
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 12px;
+      animation: none;
+    }
+  }
+
+  // Ajustes quando o header está scrolled
+  &--scrolled {
+    .language-switcher__trigger {
+      background: rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.2);
+      color: #333;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      .language-switcher__icon,
+      .language-switcher__arrow {
+        color: #666;
+      }
+
+      .language-switcher__name {
+        color: #333;
+      }
+    }
+  }
+}
+
+// Responsividade adicional
+@media (max-width: 480px) {
+  .language-switcher {
+    &__dropdown {
+      min-width: 160px;
+    }
+
+    &__option {
+      padding: 10px 12px;
+      gap: 10px;
+    }
+
+    &__option-flag {
+      font-size: 16px;
+    }
+
+    &__option-native {
+      font-size: 13px;
+    }
+
+    &__option-name {
+      font-size: 11px;
+    }
+  }
+}

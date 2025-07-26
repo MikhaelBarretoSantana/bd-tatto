@@ -1,8 +1,10 @@
-// 📤 Barrel exports - Centraliza todas as exportações de componentes
+// components/index.ts
+// 📤 Barrel exports - Centraliza todas as exportações de componentes (atualizado)
 
 // Componentes de UI/Utilitários
 export { default as WhatsAppIcon } from "./WhatsAppIcon/WhatsAppIcon";
 export { default as WhatsAppFloat } from "./whatsAppFloat/WhatsAppFloat";
+export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 
 // Componentes principais da página
 export { default as Header } from "./header/Header";

@@ -7,8 +7,9 @@ export const WHATSAPP_NUMBER = "351911565927";
 export const CONTACT_INFO: ContactInfo = {
   whatsappNumber: WHATSAPP_NUMBER,
   email: "briandantas.tattoo@gmail.com",
-  address: "Av. da Liberdade, 666 - Braga",
-  googleMapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.886392920909!2d-8.422062!3d41.550056999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff5d1450def7%3A0x278d08c027a9465a!2sBrian%20Dantas%20Tattoo!5e0!3m2!1spt-BR!2sbr!4v1752101694260!5m2!1spt-BR!2sbr",
+  address: "Av. da Liberdade, 666 - 1º andar - Braga", // ATUALIZADO: Adicionado "1º andar"
+  googleMapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.886392920909!2d-8.422062!3d41.550056999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff5d1450def7%3A0x278d08c027a9465a!2sBrian%20Dantas%20Tattoo!5e0!3m2!1spt-BR!2sbr!4v1752101694260!5m2!1spt-BR!2sbr",
 };
 
 export const PORTFOLIO_IMAGES: PortfolioImage[] = [
@@ -40,6 +41,12 @@ export const PORTFOLIO_IMAGES: PortfolioImage[] = [
     src: "/img/tattoos/fine_line_6.jpeg",
     category: "Fine Line",
     description: "Arte sutil com traços refinados",
+    type: "image",
+  },
+  {
+    src: "/img/tattoos/colorfull_1.jpeg",
+    category: "Colorida", // CORRIGIDO: Mudado de "Colorful" para "Colorida"
+    description: "Cores vibrantes e técnica impecável", // ATUALIZADO: Descrição correta
     type: "image",
   },
   {
@@ -109,70 +116,80 @@ export const STUDIO_FEATURES = [
 
 // Configurações de idiomas
 export const LANGUAGE_CONFIG = {
-  defaultLanguage: 'pt' as const,
-  supportedLanguages: ['pt', 'en', 'es', 'fr'] as const,
-  storageKey: 'bd-tattoo-language',
-  
+  defaultLanguage: "pt" as const,
+  supportedLanguages: ["pt", "en", "es", "fr"] as const,
+  storageKey: "bd-tattoo-language",
+
   // Mapeamento de códigos de país para idiomas
   countryToLanguage: {
-    'pt': 'pt',
-    'br': 'pt',
-    'us': 'en',
-    'gb': 'en',
-    'ca': 'en',
-    'au': 'en',
-    'es': 'es',
-    'mx': 'es',
-    'ar': 'es',
-    'co': 'es',
-    'pe': 'es',
-    'fr': 'fr',
-    'be': 'fr',
-    'ch': 'fr',
-    'ma': 'fr'
-  }
+    pt: "pt",
+    br: "pt",
+    us: "en",
+    gb: "en",
+    ca: "en",
+    au: "en",
+    es: "es",
+    mx: "es",
+    ar: "es",
+    co: "es",
+    pe: "es",
+    fr: "fr",
+    be: "fr",
+    ch: "fr",
+    ma: "fr",
+  },
 };
 
 // URLs para diferentes idiomas (se houver subdominios futuros)
 export const LANGUAGE_URLS = {
-  pt: 'https://bdtattoo.com',
-  en: 'https://bdtattoo.com/en',
-  es: 'https://bdtattoo.com/es',
-  fr: 'https://bdtattoo.com/fr'
+  pt: "https://bdtattoo.com",
+  en: "https://bdtattoo.com/en",
+  es: "https://bdtattoo.com/es",
+  fr: "https://bdtattoo.com/fr",
 };
 
-// Meta tags por idioma para SEO
+// Meta tags por idioma para SEO - ATUALIZADAS com endereço completo
 export const SEO_CONFIG = {
   pt: {
     title: "BD Tattoo - Brian Dantas | Tatuagens Realismo e Fine Line em Braga",
-    description: "BD Tattoo - Brian Dantas, tatuador profissional em Braga especializado em Realismo e Fine Line. Mais de 5 anos criando arte única na pele.",
-    keywords: "tatuagem, tattoo, realismo, fine line, Braga, Portugal, Brian Dantas, estúdio, arte corporal"
+    description:
+      "BD Tattoo - Brian Dantas, tatuador profissional em Braga especializado em Realismo e Fine Line. Mais de 5 anos criando arte única na pele. Av. da Liberdade, 666 - 1º andar.",
+    keywords:
+      "tatuagem, tattoo, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estúdio, arte corporal, Avenida da Liberdade",
   },
   en: {
     title: "BD Tattoo - Brian Dantas | Realism and Fine Line Tattoos in Braga",
-    description: "BD Tattoo - Brian Dantas, professional tattoo artist in Braga specialized in Realism and Fine Line. Over 5 years creating unique skin art.",
-    keywords: "tattoo, realism, fine line, Braga, Portugal, Brian Dantas, studio, body art, professional"
+    description:
+      "BD Tattoo - Brian Dantas, professional tattoo artist in Braga specialized in Realism and Fine Line. Over 5 years creating unique skin art. Av. da Liberdade, 666 - 1st floor.",
+    keywords:
+      "tattoo, realism, fine line, colorful, Braga, Portugal, Brian Dantas, studio, body art, professional, Avenida da Liberdade",
   },
   es: {
     title: "BD Tattoo - Brian Dantas | Tatuajes Realismo y Fine Line en Braga",
-    description: "BD Tattoo - Brian Dantas, tatuador profesional en Braga especializado en Realismo y Fine Line. Más de 5 años creando arte único en la piel.",
-    keywords: "tatuaje, realismo, fine line, Braga, Portugal, Brian Dantas, estudio, arte corporal"
+    description:
+      "BD Tattoo - Brian Dantas, tatuador profesional en Braga especializado en Realismo y Fine Line. Más de 5 años creando arte único en la piel. Av. da Liberdade, 666 - 1º piso.",
+    keywords:
+      "tatuaje, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estudio, arte corporal, Avenida da Liberdade",
   },
   fr: {
     title: "BD Tattoo - Brian Dantas | Tatouages Réalisme et Fine Line à Braga",
-    description: "BD Tattoo - Brian Dantas, tatoueur professionnel à Braga spécialisé en Réalisme et Fine Line. Plus de 5 ans à créer de l'art unique sur la peau.",
-    keywords: "tatouage, réalisme, fine line, Braga, Portugal, Brian Dantas, studio, art corporel"
-  }
+    description:
+      "BD Tattoo - Brian Dantas, tatoueur professionnel à Braga spécialisé en Réalisme et Fine Line. Plus de 5 ans à créer de l'art unique sur la peau. Av. da Liberdade, 666 - 1er étage.",
+    keywords:
+      "tatouage, réalisme, fine line, colorée, Braga, Portugal, Brian Dantas, studio, art corporel, Avenida da Liberdade",
+  },
 };
 
 // Configurações para analytics por idioma
 export const ANALYTICS_CONFIG = {
   // Eventos personalizados para diferentes idiomas
   events: {
-    languageChange: 'language_change',
-    contactForm: 'contact_form_submit',
-    whatsappClick: 'whatsapp_click',
-    portfolioView: 'portfolio_view',
-    studioVisit: 'studio_visit_request'
-  }
+    languageChange: "language_change",
+    contactForm: "contact_form_submit",
+    whatsappClick: "whatsapp_click",
+    portfolioView: "portfolio_view",
+    studioVisit: "studio_visit_request",
+    // NOVO: Evento para visualização de tattoos coloridas
+    colorfulTattooView: "colorful_tattoo_view",
+  },
 };

@@ -1,5 +1,5 @@
 // components/portfolio/Portfolio.tsx
-// 🎨 Galeria de trabalhos com carrossel interativo - Descrições traduzidas
+// 🎨 Galeria de trabalhos com carrossel interativo - Suporte à categoria Colorida
 
 import React from "react";
 import { ChevronLeft, ChevronRight, Instagram } from "lucide-react";
@@ -10,7 +10,7 @@ import { PORTFOLIO_IMAGES } from "../../constants";
 /**
  * Componente Portfolio com carrossel completo
  * Inclui navegação por touch, teclado, auto-play e indicadores
- * Agora com tradução dinâmica das categorias E descrições
+ * Agora com tradução dinâmica das categorias E descrições, incluindo Colorida
  */
 const Portfolio: React.FC = () => {
   const { t, formatMessage } = useI18n();
@@ -32,6 +32,10 @@ const Portfolio: React.FC = () => {
     const categoryMap: { [key: string]: keyof typeof t.portfolioCategories } = {
       'Fine Line': 'fineLine',
       'Realismo': 'realism',
+      'Colorida': 'colorful',    // NOVA CATEGORIA: Colorida -> colorful
+      'Geométrico': 'geometric',
+      'Minimalista': 'minimalist',
+      'Blackwork': 'blackwork',
       'Ver Mais': 'realism', // Fallback para "Ver Mais"
     };
     
@@ -43,12 +47,22 @@ const Portfolio: React.FC = () => {
   const translateDescription = (originalDescription: string, category: string): string => {
     // Mapeamento das descrições originais para chaves de tradução
     const descriptionMap: { [key: string]: string } = {
+      // Fine Line
       'Traços delicados e minimalistas': t.portfolio.descriptions?.fineLine1 || 'Traços delicados e minimalistas',
-      'Detalhes hiper-realistas com sombreado profissional': t.portfolio.descriptions?.realism1 || 'Detalhes hiper-realistas com sombreado profissional',
       'Linhas finas e precisas com elegância': t.portfolio.descriptions?.fineLine2 || 'Linhas finas e precisas com elegância',
-      'Texturas realistas e profundidade visual': t.portfolio.descriptions?.realism2 || 'Texturas realistas e profundidade visual',
       'Arte sutil com traços refinados': t.portfolio.descriptions?.fineLine3 || 'Arte sutil com traços refinados',
+      
+      // Realismo
+      'Detalhes hiper-realistas com sombreado profissional': t.portfolio.descriptions?.realism1 || 'Detalhes hiper-realistas com sombreado profissional',
+      'Texturas realistas e profundidade visual': t.portfolio.descriptions?.realism2 || 'Texturas realistas e profundidade visual',
       'Técnica realista com riqueza de detalhes': t.portfolio.descriptions?.realism3 || 'Técnica realista com riqueza de detalhes',
+      
+      // Colorida - NOVA CATEGORIA
+      'Cores vibrantes e técnica impecável': t.portfolio.descriptions?.colorful1 || 'Cores vibrantes e técnica impecável',
+      'Arte colorida com pigmentação intensa': t.portfolio.descriptions?.colorful2 || 'Arte colorida com pigmentação intensa',
+      'Explosão de cores com degradês perfeitos': t.portfolio.descriptions?.colorful3 || 'Explosão de cores com degradês perfeitos',
+      
+      // Instagram
       'Confira todos os nossos trabalhos': t.portfolio.instagram.description,
     };
 

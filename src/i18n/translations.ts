@@ -72,7 +72,10 @@ const pt: Translation = {
       fineLine3: 'Arte sutil com traços refinados',
       realism1: 'Detalhes hiper-realistas com sombreado profissional',
       realism2: 'Texturas realistas e profundidade visual',
-      realism3: 'Técnica realista com riqueza de detalhes'
+      realism3: 'Técnica realista com riqueza de detalhes',
+      colorful1: 'Cores vibrantes e técnica impecável',
+      colorful2: 'Arte colorida com pigmentação intensa',
+      colorful3: 'Explosão de cores com degradês perfeitos'
     }
   },
   studio: {
@@ -146,7 +149,7 @@ const pt: Translation = {
     title: 'Nossa Localização',
     description: 'Venha nos visitar no nosso estúdio. Estamos localizados em um ambiente acolhedor e profissional.',
     locationTitle: 'Localização',
-    address: 'Av. da Liberdade, 666\nBraga - Portugal\n4710-249',
+    address: 'Av. da Liberdade, 666 - 1º andar\nBraga - Portugal\n4710-249',
     ctaButton: 'Agendar pelo WhatsApp',
     ctaTitle: 'Agendar pelo WhatsApp',
     mapTitle: 'Localização BD Tattoo Studio'
@@ -175,7 +178,8 @@ const pt: Translation = {
     fineLine: 'Fine Line',
     geometric: 'Geométrico',
     minimalist: 'Minimalista',
-    blackwork: 'Blackwork'
+    blackwork: 'Blackwork',
+    colorful: 'Colorida'
   }
 };
 
@@ -221,7 +225,10 @@ const en: Translation = {
       fineLine3: 'Subtle art with refined strokes',
       realism1: 'Hyper-realistic details with professional shading',
       realism2: 'Realistic textures and visual depth',
-      realism3: 'Realistic technique with rich details'
+      realism3: 'Realistic technique with rich details',
+      colorful1: 'Vibrant colors and impeccable technique',
+      colorful2: 'Colorful art with intense pigmentation',
+      colorful3: 'Color explosion with perfect gradients'
     }
   },
   studio: {
@@ -295,7 +302,7 @@ const en: Translation = {
     title: 'Our Location',
     description: 'Come visit us at our studio. We are located in a welcoming and professional environment.',
     locationTitle: 'Location',
-    address: 'Av. da Liberdade, 666\nBraga - Portugal\n4710-249',
+    address: 'Av. da Liberdade, 666 - 1st floor\nBraga - Portugal\n4710-249',
     ctaButton: 'Schedule via WhatsApp',
     ctaTitle: 'Schedule via WhatsApp',
     mapTitle: 'BD Tattoo Studio Location'
@@ -324,7 +331,8 @@ const en: Translation = {
     fineLine: 'Fine Line',
     geometric: 'Geometric',
     minimalist: 'Minimalist',
-    blackwork: 'Blackwork'
+    blackwork: 'Blackwork',
+    colorful: 'Colorful'
   }
 };
 
@@ -370,7 +378,10 @@ const es: Translation = {
       fineLine3: 'Arte sutil con trazos refinados',
       realism1: 'Detalles hiper-realistas con sombreado profesional',
       realism2: 'Texturas realistas y profundidad visual',
-      realism3: 'Técnica realista con riqueza de detalles'
+      realism3: 'Técnica realista con riqueza de detalles',
+      colorful1: 'Colores vibrantes y técnica impecable',
+      colorful2: 'Arte colorido con pigmentación intensa',
+      colorful3: 'Explosión de colores con degradados perfectos'
     }
   },
   studio: {
@@ -444,7 +455,7 @@ const es: Translation = {
     title: 'Nuestra Ubicación',
     description: 'Ven a visitarnos en nuestro estudio. Estamos ubicados en un ambiente acogedor y profesional.',
     locationTitle: 'Ubicación',
-    address: 'Av. da Liberdade, 666\nBraga - Portugal\n4710-249',
+    address: 'Av. da Liberdade, 666 - 1º piso\nBraga - Portugal\n4710-249',
     ctaButton: 'Agendar por WhatsApp',
     ctaTitle: 'Agendar por WhatsApp',
     mapTitle: 'Ubicación BD Tattoo Studio'
@@ -473,7 +484,8 @@ const es: Translation = {
     fineLine: 'Fine Line',
     geometric: 'Geométrico',
     minimalist: 'Minimalista',
-    blackwork: 'Blackwork'
+    blackwork: 'Blackwork',
+    colorful: 'Colorida'
   }
 };
 
@@ -519,7 +531,10 @@ const fr: Translation = {
       fineLine3: 'Art subtil avec traits raffinés',
       realism1: 'Détails hyper-réalistes avec ombrage professionnel',
       realism2: 'Textures réalistes et profondeur visuelle',
-      realism3: 'Technique réaliste avec richesse des détails'
+      realism3: 'Technique réaliste avec richesse des détails',
+      colorful1: 'Couleurs vibrantes et technique impeccable',
+      colorful2: 'Art coloré avec pigmentation intense',
+      colorful3: 'Explosion de couleurs avec dégradés parfaits'
     }
   },
   studio: {
@@ -593,7 +608,7 @@ const fr: Translation = {
     title: 'Notre Localisation',
     description: 'Venez nous rendre visite dans notre studio. Nous sommes situés dans un environnement accueillant et professionnel.',
     locationTitle: 'Localisation',
-    address: 'Av. da Liberdade, 666\nBraga - Portugal\n4710-249',
+    address: 'Av. da Liberdade, 666 - 1er étage\nBraga - Portugal\n4710-249',
     ctaButton: 'Planifier par WhatsApp',
     ctaTitle: 'Planifier par WhatsApp',
     mapTitle: 'Localisation BD Tattoo Studio'
@@ -622,7 +637,8 @@ const fr: Translation = {
     fineLine: 'Fine Line',
     geometric: 'Géométrique',
     minimalist: 'Minimaliste',
-    blackwork: 'Blackwork'
+    blackwork: 'Blackwork',
+    colorful: 'Colorée'
   }
 };
 

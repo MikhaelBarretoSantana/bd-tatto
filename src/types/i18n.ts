@@ -52,6 +52,9 @@ export interface PortfolioTranslation {
     realism1: string;
     realism2: string;
     realism3: string;
+    colorful1: string;
+    colorful2: string;
+    colorful3: string;
   };
 }
 
@@ -162,6 +165,7 @@ export interface PortfolioCategoriesTranslation {
   geometric: string;
   minimalist: string;
   blackwork: string;
+  colorful: string;
 }
 
 export interface Translation {

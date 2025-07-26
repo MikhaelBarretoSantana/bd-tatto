@@ -1,7 +1,6 @@
-// 🟢 Botão flutuante fixo do WhatsApp
-
 import React from "react";
 import WhatsAppIcon from "../WhatsAppIcon/WhatsAppIcon";
+import { useI18n } from "../../i18n/I18nContext";
 import { openWhatsApp } from "../../utils";
 
 /**
@@ -9,12 +8,18 @@ import { openWhatsApp } from "../../utils";
  * Aparece em todas as páginas para contato rápido
  */
 const WhatsAppFloat: React.FC = () => {
+  const { t } = useI18n();
+
+  const handleClick = () => {
+    openWhatsApp(t.whatsapp.defaultMessage);
+  };
+
   return (
     <button
       className="whatsapp-float"
-      onClick={() => openWhatsApp()}
-      title="Fale conosco no WhatsApp"
-      aria-label="Abrir conversa no WhatsApp"
+      onClick={handleClick}
+      title={t.footer.contactWhatsApp}
+      aria-label={t.accessibility.openWhatsApp}
     >
       <WhatsAppIcon size={28} />
     </button>

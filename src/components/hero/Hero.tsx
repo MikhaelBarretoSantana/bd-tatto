@@ -1,13 +1,22 @@
-// 🚀 Seção principal/banner com logo como imagem
+// components/hero/Hero.tsx
+// 🚀 Seção principal/banner com logo como imagem - Internacionalizado
 
 import React from "react";
+import { useI18n } from "../../i18n/I18nContext";
 import { openWhatsApp } from "../../utils";
 
 /**
  * Seção Hero - Banner principal da página
  * Usa a logo oficial como imagem para manter identidade visual
+ * Agora com suporte completo a múltiplos idiomas
  */
 const Hero: React.FC = () => {
+  const { t } = useI18n();
+
+  const handleCTAClick = () => {
+    openWhatsApp(t.whatsapp.defaultMessage);
+  };
+
   return (
     <section id="home" className="hero">
       <div className="hero__overlay"></div>
@@ -22,15 +31,14 @@ const Hero: React.FC = () => {
           />
         </div>
 
-        <h2 className="hero__subtitle">Eternizando traços e histórias</h2>
+        <h2 className="hero__subtitle">{t.hero.subtitle}</h2>
 
         <p className="hero__description">
-          Mais de 5 anos criando tatuagens únicas e sofisticadas. Cada traço é
-          pensado para contar sua história com elegância e precisão.
+          {t.hero.description}
         </p>
 
-        <button onClick={() => openWhatsApp()} className="hero__cta">
-          Agende Sua Consulta
+        <button onClick={handleCTAClick} className="hero__cta">
+          {t.hero.cta}
         </button>
       </div>
     </section>

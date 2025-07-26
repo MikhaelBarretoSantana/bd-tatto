@@ -1,17 +1,32 @@
-// 🧭 Componente de navegação principal
+// components/header/Header.tsx
+// 🧭 Componente de navegação principal com seletor de idiomas
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useScroll, scrollToSection } from "../../hooks/useScroll";
-import { NAVIGATION_ITEMS } from "../../constants";
+import { useI18n } from "../../i18n/I18nContext";
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+
+// Items de navegação agora são dinâmicos baseados no idioma
+const getNavigationItems = (t: any) => [
+  { id: 'home', label: t.header.home },
+  { id: 'about', label: t.header.about },
+  { id: 'portfolio', label: t.header.portfolio },
+  { id: 'studio', label: t.header.studio },
+  { id: 'contact', label: t.header.contact },
+  { id: 'location', label: t.header.location },
+];
 
 /**
- * Header com navegação responsiva
- * Inclui menu desktop, mobile e efeito de scroll
+ * Header com navegação responsiva e seletor de idiomas
+ * Inclui menu desktop, mobile, efeito de scroll e troca de idiomas
  */
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isHeaderScrolled = useScroll(100);
+  const { t } = useI18n();
+  
+  const navigationItems = getNavigationItems(t);
 
   const handleMenuClick = (sectionId: string) => {
     scrollToSection(sectionId);
@@ -30,7 +45,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <ul className="header__menu header__menu--desktop">
-            {NAVIGATION_ITEMS.map((item) => (
+            {navigationItems.map((item) => (
               <li key={item.id} className="header__menu-item">
                 <button
                   onClick={() => handleMenuClick(item.id)}
@@ -42,14 +57,18 @@ const Header: React.FC = () => {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="header__menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Language Switcher + Mobile Menu Button */}
+          <div className="header__actions">
+            <LanguageSwitcher />
+            
+            <button
+              className="header__menu-toggle"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? t.accessibility.closeMenu : t.accessibility.openMenu}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -59,7 +78,7 @@ const Header: React.FC = () => {
           }`}
         >
           <ul className="header__menu-list">
-            {NAVIGATION_ITEMS.map((item) => (
+            {navigationItems.map((item) => (
               <li key={item.id} className="header__menu-item">
                 <button
                   onClick={() => handleMenuClick(item.id)}
@@ -70,6 +89,11 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
+          
+          {/* Language Switcher Mobile */}
+          <div className="header__mobile-language">
+            <LanguageSwitcher />
+          </div>
         </div>
       </nav>
     </header>

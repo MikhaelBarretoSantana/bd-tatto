@@ -1,21 +1,31 @@
-// 📝 Hook para gerenciamento completo do formulário de contato
+// hooks/useContactForm.ts
+// 📧 Hook para gerenciar formulário de contato - Versão final com i18n
 
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { FormData, FormValidation } from "../types";
-import {
-  validateEmail,
-  validatePhone,
-  capitalizeName,
-  formatPhoneNumbers,
-  openWhatsApp,
-} from "../utils";
+import { useI18n } from "../i18n/I18nContext";
+import { openWhatsApp } from "../utils";
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+interface FormValidation {
+  emailValid: boolean;
+  phoneValid: boolean;
+}
 
 /**
- * Hook que gerencia todo o estado e lógica do formulário de contato
- * Inclui validação em tempo real, formatação e integração com WhatsApp
+ * Hook personalizado para gerenciar o formulário de contato
+ * Inclui validação em tempo real e envio via WhatsApp
+ * Versão corrigida com todas as funcionalidades de i18n
  */
 export const useContactForm = () => {
+  const { t, formatMessage, currentLanguage } = useI18n();
+  
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -28,85 +38,106 @@ export const useContactForm = () => {
     phoneValid: true,
   });
 
-  /**
-   * Manipula mudanças nos campos do formulário com validação e formatação
-   */
-  const handleInputChange = (field: keyof FormData, value: string) => {
-    let processedValue = value;
-
-    switch (field) {
-      case "name":
-        // Capitaliza primeira letra de cada palavra
-        processedValue = capitalizeName(value);
-        break;
-
-      case "phone":
-        // Remove caracteres especiais, só números
-        processedValue = formatPhoneNumbers(value);
-        // Valida telefone em tempo real
-        setFormValidation((prev) => ({
-          ...prev,
-          phoneValid: value === "" || validatePhone(processedValue),
-        }));
-        break;
-
-      case "email":
-        // Valida email em tempo real
-        setFormValidation((prev) => ({
-          ...prev,
-          emailValid: value === "" || validateEmail(value),
-        }));
-        break;
-    }
-
-    // Atualiza o estado do formulário
-    setFormData((prev) => ({ ...prev, [field]: processedValue }));
+  // Validação de email
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return email === "" || emailRegex.test(email);
   };
 
-  /**
-   * Submete o formulário com validação completa e integração WhatsApp
-   */
-  const handleFormSubmit = () => {
-    // Validações finais
-    const isEmailValid = validateEmail(formData.email);
-    const isPhoneValid = validatePhone(formData.phone);
+  // Validação de telefone
+  const validatePhone = (phone: string): boolean => {
+    const phoneRegex = /^[\d\s\+\-\(\)]{0,20}$/;
+    return phone === "" || phoneRegex.test(phone);
+  };
 
-    setFormValidation({
-      emailValid: isEmailValid,
-      phoneValid: isPhoneValid,
+  // Atualiza campo e valida em tempo real
+  const handleInputChange = (field: keyof FormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+
+    // Validação em tempo real
+    if (field === "email") {
+      setFormValidation(prev => ({
+        ...prev,
+        emailValid: validateEmail(value),
+      }));
+    }
+
+    if (field === "phone") {
+      setFormValidation(prev => ({
+        ...prev,
+        phoneValid: validatePhone(value),
+      }));
+    }
+  };
+
+  // Submete formulário via WhatsApp
+  const handleFormSubmit = () => {
+    const { name, email, phone, message } = formData;
+
+    // Mensagens de erro baseadas no idioma atual
+    const errorMessages = {
+      nameRequired: currentLanguage === 'pt' ? 'Por favor, preencha seu nome' : 
+                   currentLanguage === 'en' ? 'Please fill in your name' :
+                   currentLanguage === 'es' ? 'Por favor, complete su nombre' :
+                   'Veuillez remplir votre nom',
+      emailInvalid: currentLanguage === 'pt' ? 'Por favor, insira um email válido' :
+                   currentLanguage === 'en' ? 'Please enter a valid email' :
+                   currentLanguage === 'es' ? 'Por favor, ingrese un email válido' :
+                   'Veuillez saisir un email valide',
+      messageRequired: currentLanguage === 'pt' ? 'Por favor, descreva sua ideia de tatuagem' :
+                      currentLanguage === 'en' ? 'Please describe your tattoo idea' :
+                      currentLanguage === 'es' ? 'Por favor, describa su idea de tatuaje' :
+                      'Veuillez décrire votre idée de tatouage'
+    };
+
+    // Validações
+    if (!name.trim()) {
+      toast.error(errorMessages.nameRequired);
+      return;
+    }
+
+    if (email && !validateEmail(email)) {
+      toast.error(errorMessages.emailInvalid);
+      return;
+    }
+
+    if (!message.trim()) {
+      toast.error(errorMessages.messageRequired);
+      return;
+    }
+
+    // Texto padrão para campos não informados baseado no idioma
+    const notInformedText = currentLanguage === 'pt' ? 'Não informado' :
+                           currentLanguage === 'en' ? 'Not provided' :
+                           currentLanguage === 'es' ? 'No informado' :
+                           'Non renseigné';
+
+    // Formatar mensagem para WhatsApp
+    const whatsappMessage = formatMessage(t.whatsapp.contactFormMessage, {
+      name: name.trim(),
+      email: email.trim() || notInformedText,
+      phone: phone.trim() || notInformedText,
+      message: message.trim()
     });
 
-    // Verifica se todos os campos estão preenchidos
-    if (formData.name && formData.email && formData.phone && formData.message) {
-      if (!isEmailValid) {
-        toast.error("Por favor, insira um email válido!");
-        return;
-      }
+    // Enviar via WhatsApp
+    openWhatsApp(whatsappMessage);
 
-      if (!isPhoneValid) {
-        toast.error("Por favor, insira um telefone válido (mínimo 8 dígitos)!");
-        return;
-      }
+    // Mensagem de sucesso
+    const successMessage = currentLanguage === 'pt' ? 'Redirecionando para o WhatsApp...' :
+                          currentLanguage === 'en' ? 'Redirecting to WhatsApp...' :
+                          currentLanguage === 'es' ? 'Redirigiendo a WhatsApp...' :
+                          'Redirection vers WhatsApp...';
+    
+    toast.success(successMessage);
 
-      // Monta mensagem formatada para WhatsApp
-      const whatsappMessage = `Olá! Meu nome é ${formData.name}.
-
-✉️ Email: ${formData.email}
-📱 Telefone: ${formData.phone}
-
-💭 Minha ideia de tatuagem:
-${formData.message}
-
-Gostaria de agendar uma consulta!`;
-
-      // Envia para WhatsApp e limpa formulário
-      openWhatsApp(whatsappMessage);
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setFormValidation({ emailValid: true, phoneValid: true });
-      toast.success("Redirecionando para o WhatsApp...");
-    } else {
-      toast.error("Por favor, preencha todos os campos!");
-    }
+    // Limpar formulário
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
   };
 
   return {

@@ -101,35 +101,20 @@ const pt: Translation = {
     ctaButton: 'Agendar Visita ao Estúdio',
     images: {
       workspace: {
-        title: 'Área de Trabalho',
-        description: 'Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.',
-        highlight: 'Ambiente 100% esterilizado'
-      },
-      location: {
-        title: 'Onde Braga Pulsa',
-        description: 'Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.',
-        highlight: 'Centro histórico de Braga'
+        title: 'Sala de Tatuagem',
+        description: 'Sala privativa com cadeira ergonômica profissional, iluminação LED moderna em padrão hexagonal no teto e equipamentos de última geração para máximo conforto durante a sessão.',
+        highlight: 'Design moderno e confortável'
       },
       reception: {
-        title: 'Recepção',
-        description: 'Ambiente acolhedor para receber nossos clientes',
-        highlight: 'Conforto e elegância'
-      },
-      equipment: {
-        title: 'Equipamentos',
-        description: 'Máquinas de última geração e materiais premium',
-        highlight: 'Tecnologia avançada'
-      },
-      sterilization: {
-        title: 'Esterilização',
-        description: 'Área dedicada aos protocolos de biossegurança',
-        highlight: 'Segurança total'
+        title: 'Recepção do Estúdio',
+        description: 'Ambiente de recepção sofisticado com decoração artística de anatomia, balcão de atendimento moderno em madeira ripada, iluminação profissional e espaço acolhedor para consultas.',
+        highlight: 'Atendimento personalizado'
       }
     }
   },
   contact: {
     title: 'Agende Sua Sessão',
-    address: 'Av. da Liberdade, 666 - 1ª Andar, Braga',
+    address: 'Rua do Carmo, 79 - Braga, Portugal - 4700-309',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -149,7 +134,7 @@ const pt: Translation = {
     title: 'Nossa Localização',
     description: 'Venha nos visitar no nosso estúdio. Estamos localizados em um ambiente acolhedor e profissional.',
     locationTitle: 'Localização',
-    address: 'Av. da Liberdade, 666 - 1º andar\nBraga - Portugal\n4710-249',
+    address: 'Rua do Carmo, 79\nBraga - Portugal\n4700-309',
     ctaButton: 'Agendar pelo WhatsApp',
     ctaTitle: 'Agendar pelo WhatsApp',
     mapTitle: 'Localização BD Tattoo Studio'
@@ -254,35 +239,20 @@ const en: Translation = {
     ctaButton: 'Schedule Studio Visit',
     images: {
       workspace: {
-        title: 'Work Area',
-        description: 'Sterilized and organized space, following the most rigorous biosafety protocols.',
-        highlight: '100% sterilized environment'
-      },
-      location: {
-        title: 'Where Braga Pulses',
-        description: 'Located on the iconic Avenida da Liberdade, in the heart of Braga, with easy access to public transport and busy commercial area.',
-        highlight: 'Historic center of Braga'
+        title: 'Tattoo Room',
+        description: 'Private room with professional ergonomic chair, modern LED lighting in hexagonal pattern on the ceiling and state-of-the-art equipment for maximum comfort during the session.',
+        highlight: 'Modern and comfortable design'
       },
       reception: {
-        title: 'Reception',
-        description: 'Welcoming environment to receive our clients',
-        highlight: 'Comfort and elegance'
-      },
-      equipment: {
-        title: 'Equipment',
-        description: 'Latest generation machines and premium materials',
-        highlight: 'Advanced technology'
-      },
-      sterilization: {
-        title: 'Sterilization',
-        description: 'Area dedicated to biosafety protocols',
-        highlight: 'Total safety'
+        title: 'Studio Reception',
+        description: 'Sophisticated reception area with artistic anatomy decoration, modern slatted wood service counter, professional lighting and welcoming space for consultations.',
+        highlight: 'Personalized service'
       }
     }
   },
   contact: {
     title: 'Schedule Your Session',
-    address: 'Av. da Liberdade, 666 -  1st floor, Braga',
+    address: 'Rua do Carmo, 79 - Braga, Portugal - 4700-309',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -302,7 +272,7 @@ const en: Translation = {
     title: 'Our Location',
     description: 'Come visit us at our studio. We are located in a welcoming and professional environment.',
     locationTitle: 'Location',
-    address: 'Av. da Liberdade, 666 - 1st floor\nBraga - Portugal\n4710-249',
+    address: 'Rua do Carmo, 79\nBraga - Portugal\n4700-309',
     ctaButton: 'Schedule via WhatsApp',
     ctaTitle: 'Schedule via WhatsApp',
     mapTitle: 'BD Tattoo Studio Location'
@@ -407,35 +377,20 @@ const es: Translation = {
     ctaButton: 'Agendar Visita al Estudio',
     images: {
       workspace: {
-        title: 'Área de Trabajo',
-        description: 'Espacio esterilizado y organizado, siguiendo los más rigurosos protocolos de bioseguridad.',
-        highlight: 'Ambiente 100% esterilizado'
-      },
-      location: {
-        title: 'Donde Braga Late',
-        description: 'Situado en la icónica Avenida da Liberdade, en el corazón de Braga, con fácil acceso al transporte público y área comercial concurrida.',
-        highlight: 'Centro histórico de Braga'
+        title: 'Sala de Tatuaje',
+        description: 'Sala privada con silla ergonómica profesional, iluminación LED moderna en patrón hexagonal en el techo y equipos de última generación para máximo confort durante la sesión.',
+        highlight: 'Diseño moderno y confortable'
       },
       reception: {
-        title: 'Recepción',
-        description: 'Ambiente acogedor para recibir a nuestros clientes',
-        highlight: 'Comodidad y elegancia'
-      },
-      equipment: {
-        title: 'Equipos',
-        description: 'Máquinas de última generación y materiales premium',
-        highlight: 'Tecnología avanzada'
-      },
-      sterilization: {
-        title: 'Esterilización',
-        description: 'Área dedicada a los protocolos de bioseguridad',
-        highlight: 'Seguridad total'
+        title: 'Recepción del Estudio',
+        description: 'Ambiente de recepción sofisticado con decoración artística de anatomía, mostrador de atención moderno en madera ranurada, iluminación profesional y espacio acogedor para consultas.',
+        highlight: 'Atención personalizada'
       }
     }
   },
   contact: {
     title: 'Agenda Tu Sesión',
-    address: 'Av. da Liberdade, 666 - 1º piso, Braga',
+    address: 'Rua do Carmo, 79 - Braga, Portugal - 4700-309',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -455,7 +410,7 @@ const es: Translation = {
     title: 'Nuestra Ubicación',
     description: 'Ven a visitarnos en nuestro estudio. Estamos ubicados en un ambiente acogedor y profesional.',
     locationTitle: 'Ubicación',
-    address: 'Av. da Liberdade, 666 - 1º piso\nBraga - Portugal\n4710-249',
+    address: 'Rua do Carmo, 79\nBraga - Portugal\n4700-309',
     ctaButton: 'Agendar por WhatsApp',
     ctaTitle: 'Agendar por WhatsApp',
     mapTitle: 'Ubicación BD Tattoo Studio'
@@ -560,35 +515,20 @@ const fr: Translation = {
     ctaButton: 'Planifier Visite du Studio',
     images: {
       workspace: {
-        title: 'Zone de Travail',
-        description: 'Espace stérilisé et organisé, suivant les protocoles de biosécurité les plus rigoureux.',
-        highlight: 'Environnement 100% stérilisé'
-      },
-      location: {
-        title: 'Où Braga Pulse',
-        description: 'Situé sur l\'emblématique Avenida da Liberdade, au cœur de Braga, avec un accès facile aux transports publics et à une zone commerciale animée.',
-        highlight: 'Centre historique de Braga'
+        title: 'Salle de Tatouage',
+        description: 'Salle privée avec fauteuil ergonomique professionnel, éclairage LED moderne en motif hexagonal au plafond et équipements de dernière génération pour un confort maximal pendant la séance.',
+        highlight: 'Design moderne et confortable'
       },
       reception: {
-        title: 'Réception',
-        description: 'Environnement accueillant pour recevoir nos clients',
-        highlight: 'Confort et élégance'
-      },
-      equipment: {
-        title: 'Équipements',
-        description: 'Machines de dernière génération et matériaux premium',
-        highlight: 'Technologie avancée'
-      },
-      sterilization: {
-        title: 'Stérilisation',
-        description: 'Zone dédiée aux protocoles de biosécurité',
-        highlight: 'Sécurité totale'
+        title: 'Réception du Studio',
+        description: 'Espace de réception sophistiqué avec décoration artistique d\'anatomie, comptoir d\'accueil moderne en bois rainuré, éclairage professionnel et espace accueillant pour consultations.',
+        highlight: 'Service personnalisé'
       }
     }
   },
   contact: {
     title: 'Planifiez Votre Séance',
-    address: 'Av. da Liberdade, 666 - 1er étage, Braga',
+    address: 'Rua do Carmo, 79 - Braga, Portugal - 4700-309',
     phone: '+351 911 565 927',
     email: 'briandantas.tattoo@gmail.com',
     form: {
@@ -608,7 +548,7 @@ const fr: Translation = {
     title: 'Notre Localisation',
     description: 'Venez nous rendre visite dans notre studio. Nous sommes situés dans un environnement accueillant et professionnel.',
     locationTitle: 'Localisation',
-    address: 'Av. da Liberdade, 666 - 1er étage\nBraga - Portugal\n4710-249',
+    address: 'Rua do Carmo, 79\nBraga - Portugal\n4700-309',
     ctaButton: 'Planifier par WhatsApp',
     ctaTitle: 'Planifier par WhatsApp',
     mapTitle: 'Localisation BD Tattoo Studio'

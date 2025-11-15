@@ -7,9 +7,9 @@ export const WHATSAPP_NUMBER = "351911565927";
 export const CONTACT_INFO: ContactInfo = {
   whatsappNumber: WHATSAPP_NUMBER,
   email: "briandantas.tattoo@gmail.com",
-  address: "Av. da Liberdade, 666 - 1º andar - Braga", // ATUALIZADO: Adicionado "1º andar"
+  address: "Rua do Carmo, 79 - Braga, Portugal - 4700-309",
   googleMapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.886392920909!2d-8.422062!3d41.550056999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff5d1450def7%3A0x278d08c027a9465a!2sBrian%20Dantas%20Tattoo!5e0!3m2!1spt-BR!2sbr!4v1752101694260!5m2!1spt-BR!2sbr",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.9698795913666!2d-8.429054!3d41.549986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24fea882e0d115%3A0x5c6b4c0b8c2b4c0b!2sRua%20do%20Carmo%2079%2C%204700-309%20Braga!5e0!3m2!1spt-BR!2sbr!4v1731687600000!5m2!1spt-BR!2sbr",
 };
 
 export const PORTFOLIO_IMAGES: PortfolioImage[] = [
@@ -82,18 +82,18 @@ export interface StudioFeature {
 
 export const STUDIO_IMAGES: StudioImage[] = [
   {
-    src: "/img/studio/studio-3.jpeg",
-    title: "Área de Trabalho",
+    src: "/img/studio/studio-5.jpeg",
+    title: "Sala de Tatuagem",
     description:
-      "Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.",
-    highlight: "Ambiente 100% esterilizado",
+      "Sala privativa com cadeira ergonômica profissional, iluminação LED moderna em padrão hexagonal no teto e equipamentos de última geração para máximo conforto durante a sessão.",
+    highlight: "Design moderno e confortável",
   },
   {
-    src: "/img/studio/studio-4.jpeg",
-    title: "Onde Braga Pulsa",
+    src: "/img/studio/studio-6.jpeg",
+    title: "Recepção do Estúdio",
     description:
-      "Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.",
-    highlight: "Centro histórico de Braga",
+      "Ambiente de recepção sofisticado com decoração artística de anatomia, balcão de atendimento moderno em madeira ripada, iluminação profissional e espaço acolhedor para consultas.",
+    highlight: "Atendimento personalizado",
   },
 ];
 
@@ -153,30 +153,30 @@ export const SEO_CONFIG = {
   pt: {
     title: "BD Tattoo - Brian Dantas | Tatuagens Realismo e Fine Line em Braga",
     description:
-      "BD Tattoo - Brian Dantas, tatuador profissional em Braga especializado em Realismo e Fine Line. Mais de 5 anos criando arte única na pele. Av. da Liberdade, 666 - 1º andar.",
+      "BD Tattoo - Brian Dantas, tatuador profissional em Braga especializado em Realismo e Fine Line. Mais de 5 anos criando arte única na pele. Rua do Carmo, 79 - Braga - 4700-309.",
     keywords:
-      "tatuagem, tattoo, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estúdio, arte corporal, Avenida da Liberdade",
+      "tatuagem, tattoo, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estúdio, arte corporal, Rua do Carmo",
   },
   en: {
     title: "BD Tattoo - Brian Dantas | Realism and Fine Line Tattoos in Braga",
     description:
-      "BD Tattoo - Brian Dantas, professional tattoo artist in Braga specialized in Realism and Fine Line. Over 5 years creating unique skin art. Av. da Liberdade, 666 - 1st floor.",
+      "BD Tattoo - Brian Dantas, professional tattoo artist in Braga specialized in Realism and Fine Line. Over 5 years creating unique skin art. Rua do Carmo, 79 - Braga - 4700-309.",
     keywords:
-      "tattoo, realism, fine line, colorful, Braga, Portugal, Brian Dantas, studio, body art, professional, Avenida da Liberdade",
+      "tattoo, realism, fine line, colorful, Braga, Portugal, Brian Dantas, studio, body art, professional, Rua do Carmo",
   },
   es: {
     title: "BD Tattoo - Brian Dantas | Tatuajes Realismo y Fine Line en Braga",
     description:
-      "BD Tattoo - Brian Dantas, tatuador profesional en Braga especializado en Realismo y Fine Line. Más de 5 años creando arte único en la piel. Av. da Liberdade, 666 - 1º piso.",
+      "BD Tattoo - Brian Dantas, tatuador profesional en Braga especializado en Realismo y Fine Line. Más de 5 años creando arte único en la piel. Rua do Carmo, 79 - Braga - 4700-309.",
     keywords:
-      "tatuaje, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estudio, arte corporal, Avenida da Liberdade",
+      "tatuaje, realismo, fine line, colorida, Braga, Portugal, Brian Dantas, estudio, arte corporal, Rua do Carmo",
   },
   fr: {
     title: "BD Tattoo - Brian Dantas | Tatouages Réalisme et Fine Line à Braga",
     description:
-      "BD Tattoo - Brian Dantas, tatoueur professionnel à Braga spécialisé en Réalisme et Fine Line. Plus de 5 ans à créer de l'art unique sur la peau. Av. da Liberdade, 666 - 1er étage.",
+      "BD Tattoo - Brian Dantas, tatoueur professionnel à Braga spécialisé en Réalisme et Fine Line. Plus de 5 ans à créer de l'art unique sur la peau. Rua do Carmo, 79 - Braga - 4700-309.",
     keywords:
-      "tatouage, réalisme, fine line, colorée, Braga, Portugal, Brian Dantas, studio, art corporel, Avenida da Liberdade",
+      "tatouage, réalisme, fine line, colorée, Braga, Portugal, Brian Dantas, studio, art corporel, Rua do Carmo",
   },
 };
 

@@ -85,22 +85,7 @@ export interface StudioTranslation {
       description: string;
       highlight: string;
     };
-    location: {
-      title: string;
-      description: string;
-      highlight: string;
-    };
     reception: {
-      title: string;
-      description: string;
-      highlight: string;
-    };
-    equipment: {
-      title: string;
-      description: string;
-      highlight: string;
-    };
-    sterilization: {
       title: string;
       description: string;
       highlight: string;

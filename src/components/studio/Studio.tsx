@@ -43,7 +43,6 @@ const Studio: React.FC = () => {
 
   const {
     currentSlide,
-    isPaused,
     setIsPaused,
     nextSlide,
     prevSlide,
@@ -61,18 +60,18 @@ const Studio: React.FC = () => {
   const translateStudioImageText = (originalText: string, type: 'title' | 'description' | 'highlight'): string => {
     const translationMap: { [key: string]: string } = {
       // Títulos
-      'Área de Trabalho': t.studio.images.workspace?.title || 'Área de Trabalho',
-      'Onde Braga Pulsa': t.studio.images.location?.title || 'Onde Braga Pulsa',
+      'Sala de Tatuagem': t.studio.images.workspace?.title || 'Sala de Tatuagem',
+      'Recepção do Estúdio': t.studio.images.reception?.title || 'Recepção do Estúdio',
       
       // Descrições
-      'Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.': 
-        t.studio.images.workspace?.description || 'Espaço esterilizado e organizado, seguindo os mais rigorosos protocolos de biossegurança.',
-      'Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.':
-        t.studio.images.location?.description || 'Situado na icônica Avenida da Liberdade, no coração de Braga, com acesso facilitado ao transporte público e área comercial movimentada.',
+      'Sala privativa com cadeira ergonômica profissional, iluminação LED moderna em padrão hexagonal no teto e equipamentos de última geração para máximo conforto durante a sessão.': 
+        t.studio.images.workspace?.description || 'Sala privativa com cadeira ergonômica profissional, iluminação LED moderna em padrão hexagonal no teto e equipamentos de última geração para máximo conforto durante a sessão.',
+      'Ambiente de recepção sofisticado com decoração artística de anatomia, balcão de atendimento moderno em madeira ripada, iluminação profissional e espaço acolhedor para consultas.':
+        t.studio.images.reception?.description || 'Ambiente de recepção sofisticado com decoração artística de anatomia, balcão de atendimento moderno em madeira ripada, iluminação profissional e espaço acolhedor para consultas.',
       
       // Highlights
-      'Ambiente 100% esterilizado': t.studio.images.workspace?.highlight || 'Ambiente 100% esterilizado',
-      'Centro histórico de Braga': t.studio.images.location?.highlight || 'Centro histórico de Braga',
+      'Design moderno e confortável': t.studio.images.workspace?.highlight || 'Design moderno e confortável',
+      'Atendimento personalizado': t.studio.images.reception?.highlight || 'Atendimento personalizado',
     };
 
     return translationMap[originalText] || originalText;

@@ -48,8 +48,8 @@ const pt: Translation = {
   about: {
     title: 'O Artista',
     artistName: 'Brian Dantas',
-    paragraph1: 'Sou Brian Dantas, tatuador profissional há mais de 5 anos, mas minha relação com a arte vai muito além das agulhas. Engenheiro de formação, encontrei na tatuagem o espaço perfeito para unir técnica, precisão e criatividade.',
-    paragraph2: 'Minha especialidade é o Realismo e Fine Line — estilos que exigem sensibilidade, atenção aos detalhes e um olhar apurado para transformar suas ideias em arte permanente.',
+    paragraph1: 'Sou Brian Dantas, tatuador profissional há mais de 6 anos, com uma relação profunda e verdadeira com a arte. Encontrei na tatuagem o espaço ideal para unir técnica, precisão e criatividade, sempre com leveza e autenticidade.',
+    paragraph2: 'Trabalho com diversos estilos de tatuagem, sempre priorizando traços precisos e resultados harmônicos, sem abrir mão da qualidade. Acredito que cada ideia pode se transformar em uma arte única quando guiada por sensibilidade e atenção aos detalhes.',
     paragraph3: 'Valorizo profundamente o atendimento humanizado, o conforto de cada pessoa que passa pela minha marquesa e, acima de tudo, a biossegurança e higiene em todo o processo.',
     paragraph4: 'Cada tatuagem é feita com cuidado, responsabilidade e respeito pela história que está sendo marcada na pele. Mais do que um trabalho, tatuar é uma paixão vivida todos os dias.',
     imageAlt: 'Brian Dantas - Tatuador profissional especializado em Realismo e Fine Line'
@@ -95,6 +95,11 @@ const pt: Translation = {
         title: 'Ambiente Acolhedor',
         description: 'Espaço pensado para proporcionar máximo conforto e relaxamento'
       }
+        ,
+        laserRemoval: {
+          title: 'Remoção a Laser',
+          description: 'Procedimento seguro e eficaz para remoção de tatuagens indesejadas utilizando tecnologia laser avançada.'
+        }
     },
     ctaTitle: 'Venha Conhecer Pessoalmente',
     ctaDescription: 'Agende uma visita e veja de perto onde sua arte será criada',
@@ -186,10 +191,10 @@ const en: Translation = {
   about: {
     title: 'The Artist',
     artistName: 'Brian Dantas',
-    paragraph1: 'I am Brian Dantas, a professional tattoo artist for over 5 years, but my relationship with art goes far beyond needles. An engineer by training, I found in tattooing the perfect space to unite technique, precision and creativity.',
-    paragraph2: 'My specialty is Realism and Fine Line — styles that require sensitivity, attention to detail and a keen eye to transform your ideas into permanent art.',
-    paragraph3: 'I deeply value humanized service, the comfort of each person who passes through my table and, above all, biosafety and hygiene throughout the process.',
-    paragraph4: 'Each tattoo is made with care, responsibility and respect for the story being marked on the skin. More than work, tattooing is a passion lived every day.',
+    paragraph1: "I'm Brian Dantas, a professional tattoo artist for over 6 years, with a deep and genuine connection to art. I found in tattooing the ideal space to unite technique, precision and creativity, always with lightness and authenticity.",
+    paragraph2: "I work with various tattoo styles, always prioritizing precise lines and harmonious results, without compromising on quality. I believe every idea can become a unique piece of art when guided by sensitivity and attention to detail.",
+    paragraph3: "I deeply value humanized service, the comfort of everyone who sits in my chair and, above all, biosafety and hygiene throughout the process.",
+    paragraph4: "Each tattoo is made with care, responsibility and respect for the story being marked on the skin. More than work, tattooing is a passion lived every day.",
     imageAlt: 'Brian Dantas - Professional tattoo artist specialized in Realism and Fine Line'
   },
   portfolio: {
@@ -233,6 +238,11 @@ const en: Translation = {
         title: 'Welcoming Environment',
         description: 'Space designed to provide maximum comfort and relaxation'
       }
+        ,
+        laserRemoval: {
+          title: 'Laser Removal',
+          description: 'Safe and effective procedure for removing unwanted tattoos using advanced laser technology.'
+        }
     },
     ctaTitle: 'Come Visit in Person',
     ctaDescription: 'Schedule a visit and see up close where your art will be created',
@@ -324,10 +334,10 @@ const es: Translation = {
   about: {
     title: 'El Artista',
     artistName: 'Brian Dantas',
-    paragraph1: 'Soy Brian Dantas, tatuador profesional desde hace más de 5 años, pero mi relación con el arte va mucho más allá de las agujas. Ingeniero de formación, encontré en el tatuaje el espacio perfecto para unir técnica, precisión y creatividad.',
-    paragraph2: 'Mi especialidad es el Realismo y Fine Line — estilos que requieren sensibilidad, atención al detalle y una mirada aguda para transformar tus ideas en arte permanente.',
-    paragraph3: 'Valoro profundamente la atención humanizada, la comodidad de cada persona que pasa por mi camilla y, sobre todo, la bioseguridad e higiene en todo el proceso.',
-    paragraph4: 'Cada tatuaje se hace con cuidado, responsabilidad y respeto por la historia que se está marcando en la piel. Más que un trabajo, tatuar es una pasión vivida todos los días.',
+    paragraph1: "Soy Brian Dantas, tatuador profesional desde hace más de 6 años, con una conexión profunda y genuina con el arte. Encontré en el tatuaje el espacio ideal para unir técnica, precisión y creatividad, siempre con ligereza y autenticidad.",
+    paragraph2: "Trabajo con varios estilos de tatuaje, siempre priorizando trazos precisos y resultados armoniosos, sin renunciar a la calidad. Creo que cada idea puede convertirse en una obra de arte única cuando se guía con sensibilidad y atención al detalle.",
+    paragraph3: "Valoro profundamente la atención humanizada, la comodidad de cada persona que pasa por mi camilla y, sobre todo, la bioseguridad e higiene en todo el proceso.",
+    paragraph4: "Cada tatuaje se hace con cuidado, responsabilidad y respeto por la historia que se está marcando en la piel. Más que un trabajo, tatuar es una pasión vivida todos los días.",
     imageAlt: 'Brian Dantas - Tatuador profesional especializado en Realismo y Fine Line'
   },
   portfolio: {
@@ -371,6 +381,11 @@ const es: Translation = {
         title: 'Ambiente Acogedor',
         description: 'Espacio pensado para proporcionar máxima comodidad y relajación'
       }
+        ,
+        laserRemoval: {
+          title: 'Eliminación Láser',
+          description: 'Procedimiento seguro y eficaz para eliminar tatuajes no deseados utilizando tecnología láser avanzada.'
+        }
     },
     ctaTitle: 'Ven a Conocer en Persona',
     ctaDescription: 'Agenda una visita y ve de cerca donde se creará tu arte',
@@ -462,10 +477,10 @@ const fr: Translation = {
   about: {
     title: 'L\'Artiste',
     artistName: 'Brian Dantas',
-    paragraph1: 'Je suis Brian Dantas, tatoueur professionnel depuis plus de 5 ans, mais ma relation avec l\'art va bien au-delà des aiguilles. Ingénieur de formation, j\'ai trouvé dans le tatouage l\'espace parfait pour unir technique, précision et créativité.',
-    paragraph2: 'Ma spécialité est le Réalisme et Fine Line — des styles qui exigent sensibilité, attention aux détails et un regard aiguisé pour transformer vos idées en art permanent.',
-    paragraph3: 'Je valorise profondément le service humanisé, le confort de chaque personne qui passe sur ma table et, surtout, la biosécurité et l\'hygiène dans tout le processus.',
-    paragraph4: 'Chaque tatouage est fait avec soin, responsabilité et respect pour l\'histoire qui est marquée sur la peau. Plus qu\'un travail, tatouer est une passion vécue tous les jours.',
+    paragraph1: "Je suis Brian Dantas, tatoueur professionnel depuis plus de 6 ans, avec une connexion profonde et authentique à l'art. J'ai trouvé dans le tatouage l'espace idéal pour unir technique, précision et créativité, toujours avec légèreté et authenticité.",
+    paragraph2: "Je travaille avec différents styles de tatouage, en privilégiant toujours des traits précis et des résultats harmonieux, sans jamais négliger la qualité. Je crois que chaque idée peut devenir une œuvre d'art unique lorsqu'elle est guidée par la sensibilité et l'attention aux détails.",
+    paragraph3: "Je valorise profondément le service humanisé, le confort de chaque personne qui passe sur ma table et, surtout, la biosécurité et l'hygiène dans tout le processus.",
+    paragraph4: "Chaque tatouage est fait avec soin, responsabilité et respect pour l'histoire qui est marquée sur la peau. Plus qu'un travail, tatouer est une passion vécue tous les jours.",
     imageAlt: 'Brian Dantas - Tatoueur professionnel spécialisé en Réalisme et Fine Line'
   },
   portfolio: {
@@ -509,6 +524,11 @@ const fr: Translation = {
         title: 'Environnement Accueillant',
         description: 'Espace pensé pour offrir un maximum de confort et de détente'
       }
+        ,
+        laserRemoval: {
+          title: 'Détatouage au Laser',
+          description: 'Procédure sûre et efficace pour retirer les tatouages indésirables grâce à la technologie laser avancée.'
+        }
     },
     ctaTitle: 'Venez Nous Rendre Visite en Personne',
     ctaDescription: 'Planifiez une visite et voyez de près où votre art sera créé',

@@ -75,6 +75,10 @@ export interface StudioTranslation {
       title: string;
       description: string;
     };
+    laserRemoval: {
+      title: string;
+      description: string;
+    };
   };
   ctaTitle: string;
   ctaDescription: string;

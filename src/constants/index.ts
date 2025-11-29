@@ -112,6 +112,11 @@ export const STUDIO_FEATURES = [
     description:
       "Espaço pensado para proporcionar máximo conforto e relaxamento",
   },
+  {
+    title: "Remoção a Laser",
+    description:
+      "Procedimento seguro e eficaz para remoção de tatuagens indesejadas utilizando tecnologia laser avançada.",
+  },
 ];
 
 // Configurações de idiomas

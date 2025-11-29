@@ -9,6 +9,7 @@ import {
   Sparkles,
   Heart,
   MapPin,
+  Zap,
 } from "lucide-react";
 import { useCarousel } from "../../hooks/useCarousel";
 import { useI18n } from "../../i18n/I18nContext";
@@ -38,6 +39,11 @@ const Studio: React.FC = () => {
       icon: Heart,
       title: t.studio.features.environment.title,
       description: t.studio.features.environment.description,
+    },
+    {
+      icon: Zap,
+      title: t.studio.features.laserRemoval.title,
+      description: t.studio.features.laserRemoval.description,
     },
   ];
 

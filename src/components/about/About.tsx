@@ -38,8 +38,8 @@ const renderFormattedText = (text: string, artistName: string) => {
     { pattern: /biossegurança e higiene/gi, replacement: '<strong>biossegurança e higiene</strong>' },
     { pattern: /biosafety and hygiene/gi, replacement: '<strong>biosafety and hygiene</strong>' },
     { pattern: /bioseguridad e higiene/gi, replacement: '<strong>bioseguridad e higiene</strong>' },
-    { pattern: /biosécurité et l'hygiène/gi, replacement: '<strong>biosécurité et l\'hygiène</strong>' },
-    { pattern: /biosécurité et l\'hygiène/gi, replacement: '<strong>biosécurité et l\'hygiène</strong>' },
+    { pattern: /biosécurité et l'hygiène/gi, replacement: "<strong>biosécurité et l'hygiène</strong>" },
+    { pattern: /biosécurité et l'hygiène/gi, replacement: "<strong>biosécurité et l'hygiène</strong>" },
   ];
 
   // Aplica todas as regras de formatação

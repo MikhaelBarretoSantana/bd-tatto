@@ -46,7 +46,7 @@ export const useContactForm = () => {
 
   // Validação de telefone
   const validatePhone = (phone: string): boolean => {
-    const phoneRegex = /^[\d\s\+\-\(\)]{0,20}$/;
+    const phoneRegex = /^[\d\s+()-]{0,20}$/;
     return phone === "" || phoneRegex.test(phone);
   };
 

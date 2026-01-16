@@ -68,7 +68,7 @@ export const useCarousel = ({
       const interval = setInterval(nextSlide, autoPlayInterval);
       return () => clearInterval(interval);
     }
-  }, [isPaused, autoPlayInterval, totalSlides]);
+  }, [isPaused, autoPlayInterval, totalSlides, nextSlide]);
 
   // Navegação por teclado
   useEffect(() => {
@@ -101,7 +101,7 @@ export const useCarousel = ({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [totalSlides]);
+  }, [totalSlides, nextSlide, prevSlide]);
 
   return {
     currentSlide,

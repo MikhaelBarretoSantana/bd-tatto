@@ -5,7 +5,12 @@
 // =============================================================================
 .portfolio {
   padding: 4rem 1rem 6rem;
-  background: $color-darker;
+  background: linear-gradient(
+    135deg,
+    $color-darkest 0%,
+    $color-dark 50%,
+    $color-darkest 100%
+  );
 
   @include respond-to($bp-tablet) {
     @include section-padding;

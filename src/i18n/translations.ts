@@ -37,21 +37,21 @@ const pt: Translation = {
     about: 'Sobre',
     portfolio: 'Portfolio',
     studio: 'Estúdio',
+    trust: 'Confiança',
     contact: 'Contato',
     location: 'Localização'
   },
   hero: {
-    subtitle: 'Eternizando traços e histórias',
-    description: 'Mais de 5 anos criando tatuagens únicas e sofisticadas. Cada traço é pensado para contar sua história com elegância e precisão.',
+    subtitle: 'Sua história transformada em arte para a vida toda.',
+    description: 'Projetos personalizados em realismo e fineline, com técnica precisa e acabamento sofisticado.',
     cta: 'Agende Sua Consulta'
   },
   about: {
     title: 'O Artista',
     artistName: 'Brian Dantas',
-    paragraph1: 'Sou Brian Dantas, tatuador profissional há mais de 6 anos, com uma relação profunda e verdadeira com a arte. Encontrei na tatuagem o espaço ideal para unir técnica, precisão e criatividade, sempre com leveza e autenticidade.',
-    paragraph2: 'Trabalho com diversos estilos de tatuagem, sempre priorizando traços precisos e resultados harmônicos, sem abrir mão da qualidade. Acredito que cada ideia pode se transformar em uma arte única quando guiada por sensibilidade e atenção aos detalhes.',
-    paragraph3: 'Valorizo profundamente o atendimento humanizado, o conforto de cada pessoa que passa pela minha marquesa e, acima de tudo, a biossegurança e higiene em todo o processo.',
-    paragraph4: 'Cada tatuagem é feita com cuidado, responsabilidade e respeito pela história que está sendo marcada na pele. Mais do que um trabalho, tatuar é uma paixão vivida todos os dias.',
+    paragraph1: 'Sou Brian Dantas, tatuador focado em realismo, fineline e tattoos minimalistas.',
+    paragraph2: 'Meu trabalho é transformar ideias em tatuagens autorais, com traços precisos, estética equilibrada e atenção total aos detalhes. Cada projeto é criado de forma única, respeitando a história de quem carrega a arte e a harmonia do corpo.',
+    paragraph3: 'Atendo no THE BRIDGE TATTOO, em Braga, com um processo cuidadoso, atendimento individual e padrões rigorosos de segurança e higiene.',
     imageAlt: 'Brian Dantas - Tatuador profissional especializado em Realismo e Fine Line'
   },
   portfolio: {
@@ -83,23 +83,30 @@ const pt: Translation = {
     subtitle: 'Um ambiente profissional, seguro e acolhedor, pensado especialmente para você',
     featuresTitle: 'Nossos Diferenciais',
     features: {
-      biosafety: {
-        title: 'Biossegurança Total',
-        description: 'Protocolos rigorosos de esterilização e materiais descartáveis'
+      uniqueAndPerfect: {
+        title: 'Arte Única e Impecável',
+        description: 'Cada tatuagem criada é pensada para ser única, atemporal e tecnicamente impecável. Meu foco não é quantidade, e sim qualidade, exclusividade e confiança em cada etapa do processo.'
       },
-      equipment: {
-        title: 'Equipamentos Premium',
-        description: 'Máquinas profissionais e tintas de primeira qualidade'
+      personalizedArt: {
+        title: 'Arte 100% Personalizada',
+        description: 'Cada projeto é desenvolvido do zero, respeitando sua ideia, estilo e a anatomia do corpo.'
       },
-      environment: {
-        title: 'Ambiente Acolhedor',
-        description: 'Espaço pensado para proporcionar máximo conforto e relaxamento'
+      specialization: {
+        title: 'Especialização em Realismo, Fine Line e Minimalismo',
+        description: 'Traços precisos, detalhes sutis e composições que envelhecem bem com o tempo.'
+      },
+      internationalExperience: {
+        title: 'Experiência Internacional',
+        description: 'Referências e padrões profissionais adquiridos no Brasil, Holanda e Portugal.'
+      },
+      premiumService: {
+        title: 'Atendimento Premium e Individual',
+        description: 'Processo próximo, transparente e totalmente focado em você — do primeiro contato ao pós-tattoo.'
+      },
+      exclusiveStudio: {
+        title: 'Estúdio Exclusivo e Seguro em Braga',
+        description: 'Ambiente confortável, controlado, materiais descartáveis e protocolos rigorosos de higiene.'
       }
-        ,
-        laserRemoval: {
-          title: 'Remoção a Laser',
-          description: 'Procedimento seguro e eficaz para remoção de tatuagens indesejadas utilizando tecnologia laser avançada.'
-        }
     },
     ctaTitle: 'Venha Conhecer Pessoalmente',
     ctaDescription: 'Agende uma visita e veja de perto onde sua arte será criada',
@@ -116,6 +123,32 @@ const pt: Translation = {
         highlight: 'Atendimento personalizado'
       }
     }
+  },
+  trust: {
+    title: 'Confiança e Segurança',
+    subtitle: 'Compromisso com qualidade e segurança',
+    items: [
+      {
+        title: 'Compromisso com qualidade e segurança',
+        description: ''
+      },
+      {
+        title: 'Atendimento individual e com hora marcada',
+        description: ''
+      },
+      {
+        title: 'Materiais descartáveis e esterilização rigorosa',
+        description: ''
+      },
+      {
+        title: 'Orientações completas de cuidados pós-tattoo',
+        description: ''
+      },
+      {
+        title: 'Suporte mesmo após a sessão',
+        description: ''
+      }
+    ]
   },
   contact: {
     title: 'Agende Sua Sessão',
@@ -180,21 +213,21 @@ const en: Translation = {
     about: 'About',
     portfolio: 'Portfolio',
     studio: 'Studio',
+    trust: 'Trust',
     contact: 'Contact',
     location: 'Location'
   },
   hero: {
-    subtitle: 'Eternizing lines and stories',
-    description: 'Over 5 years creating unique and sophisticated tattoos. Each stroke is designed to tell your story with elegance and precision.',
+    subtitle: 'Your story transformed into art for life.',
+    description: 'Personalized projects in realism and fine line, with precise technique and sophisticated finish.',
     cta: 'Schedule Your Consultation'
   },
   about: {
     title: 'The Artist',
     artistName: 'Brian Dantas',
-    paragraph1: "I'm Brian Dantas, a professional tattoo artist for over 6 years, with a deep and genuine connection to art. I found in tattooing the ideal space to unite technique, precision and creativity, always with lightness and authenticity.",
-    paragraph2: "I work with various tattoo styles, always prioritizing precise lines and harmonious results, without compromising on quality. I believe every idea can become a unique piece of art when guided by sensitivity and attention to detail.",
-    paragraph3: "I deeply value humanized service, the comfort of everyone who sits in my chair and, above all, biosafety and hygiene throughout the process.",
-    paragraph4: "Each tattoo is made with care, responsibility and respect for the story being marked on the skin. More than work, tattooing is a passion lived every day.",
+    paragraph1: "I'm Brian Dantas, a tattoo artist focused on realism, fine line and minimalist tattoos.",
+    paragraph2: "My work is to transform ideas into original tattoos, with precise lines, balanced aesthetics and total attention to detail. Each project is created in a unique way, respecting the story of those who carry the art and the harmony of the body.",
+    paragraph3: "I work at THE BRIDGE TATTOO, in Braga, with a careful process, individual service and rigorous standards of safety and hygiene.",
     imageAlt: 'Brian Dantas - Professional tattoo artist specialized in Realism and Fine Line'
   },
   portfolio: {
@@ -226,23 +259,30 @@ const en: Translation = {
     subtitle: 'A professional, safe and welcoming environment, designed especially for you',
     featuresTitle: 'Our Differentials',
     features: {
-      biosafety: {
-        title: 'Total Biosafety',
-        description: 'Rigorous sterilization protocols and disposable materials'
+      uniqueAndPerfect: {
+        title: 'Unique and Impeccable Art',
+        description: 'Every tattoo created is designed to be unique, timeless and technically impeccable. My focus is not on quantity, but on quality, exclusivity and trust at every stage of the process.'
       },
-      equipment: {
-        title: 'Premium Equipment',
-        description: 'Professional machines and first-quality inks'
+      personalizedArt: {
+        title: '100% Personalized Art',
+        description: 'Each project is developed from scratch, respecting your idea, style and body anatomy.'
       },
-      environment: {
-        title: 'Welcoming Environment',
-        description: 'Space designed to provide maximum comfort and relaxation'
+      specialization: {
+        title: 'Specialization in Realism, Fine Line and Minimalism',
+        description: 'Precise lines, subtle details and compositions that age well over time.'
+      },
+      internationalExperience: {
+        title: 'International Experience',
+        description: 'Professional references and standards acquired in Brazil, Netherlands and Portugal.'
+      },
+      premiumService: {
+        title: 'Premium and Individual Service',
+        description: 'Close, transparent process and totally focused on you — from first contact to post-tattoo.'
+      },
+      exclusiveStudio: {
+        title: 'Exclusive and Safe Studio in Braga',
+        description: 'Comfortable, controlled environment, disposable materials and rigorous hygiene protocols.'
       }
-        ,
-        laserRemoval: {
-          title: 'Laser Removal',
-          description: 'Safe and effective procedure for removing unwanted tattoos using advanced laser technology.'
-        }
     },
     ctaTitle: 'Come Visit in Person',
     ctaDescription: 'Schedule a visit and see up close where your art will be created',
@@ -259,6 +299,32 @@ const en: Translation = {
         highlight: 'Personalized service'
       }
     }
+  },
+  trust: {
+    title: 'Trust and Safety',
+    subtitle: 'Commitment to quality and safety',
+    items: [
+      {
+        title: 'Commitment to quality and safety',
+        description: ''
+      },
+      {
+        title: 'Individual and appointment-based service',
+        description: ''
+      },
+      {
+        title: 'Disposable materials and rigorous sterilization',
+        description: ''
+      },
+      {
+        title: 'Complete post-tattoo care guidance',
+        description: ''
+      },
+      {
+        title: 'Support even after the session',
+        description: ''
+      }
+    ]
   },
   contact: {
     title: 'Schedule Your Session',
@@ -323,21 +389,21 @@ const es: Translation = {
     about: 'Acerca',
     portfolio: 'Portfolio',
     studio: 'Estudio',
+    trust: 'Confianza',
     contact: 'Contacto',
     location: 'Ubicación'
   },
   hero: {
-    subtitle: 'Eternizando trazos e historias',
-    description: 'Más de 5 años creando tatuajes únicos y sofisticados. Cada trazo está pensado para contar tu historia con elegancia y precisión.',
+    subtitle: 'Tu historia transformada en arte para toda la vida.',
+    description: 'Proyectos personalizados en realismo y fineline, con técnica precisa y acabado sofisticado.',
     cta: 'Agenda Tu Consulta'
   },
   about: {
     title: 'El Artista',
     artistName: 'Brian Dantas',
-    paragraph1: "Soy Brian Dantas, tatuador profesional desde hace más de 6 años, con una conexión profunda y genuina con el arte. Encontré en el tatuaje el espacio ideal para unir técnica, precisión y creatividad, siempre con ligereza y autenticidad.",
-    paragraph2: "Trabajo con varios estilos de tatuaje, siempre priorizando trazos precisos y resultados armoniosos, sin renunciar a la calidad. Creo que cada idea puede convertirse en una obra de arte única cuando se guía con sensibilidad y atención al detalle.",
-    paragraph3: "Valoro profundamente la atención humanizada, la comodidad de cada persona que pasa por mi camilla y, sobre todo, la bioseguridad e higiene en todo el proceso.",
-    paragraph4: "Cada tatuaje se hace con cuidado, responsabilidad y respeto por la historia que se está marcando en la piel. Más que un trabajo, tatuar es una pasión vivida todos los días.",
+    paragraph1: "Soy Brian Dantas, tatuador enfocado en realismo, fine line y tatuajes minimalistas.",
+    paragraph2: "Mi trabajo es transformar ideas en tatuajes originales, con trazos precisos, estética equilibrada y atención total a los detalles. Cada proyecto es creado de forma única, respetando la historia de quienes portan el arte y la armonía del cuerpo.",
+    paragraph3: "Trabajo en THE BRIDGE TATTOO, en Braga, con un proceso cuidadoso, atención individual y estándares rigurosos de seguridad e higiene.",
     imageAlt: 'Brian Dantas - Tatuador profesional especializado en Realismo y Fine Line'
   },
   portfolio: {
@@ -369,23 +435,30 @@ const es: Translation = {
     subtitle: 'Un ambiente profesional, seguro y acogedor, pensado especialmente para ti',
     featuresTitle: 'Nuestros Diferenciales',
     features: {
-      biosafety: {
-        title: 'Bioseguridad Total',
-        description: 'Protocolos rigurosos de esterilización y materiales desechables'
+      uniqueAndPerfect: {
+        title: 'Arte Único e Impecable',
+        description: 'Cada tatuaje creado está pensado para ser único, atemporal y técnicamente impecable. Mi enfoque no es cantidad, sino calidad, exclusividad y confianza en cada paso del proceso.'
       },
-      equipment: {
-        title: 'Equipos Premium',
-        description: 'Máquinas profesionales y tintas de primera calidad'
+      personalizedArt: {
+        title: 'Arte 100% Personalizado',
+        description: 'Cada proyecto se desarrolla desde cero, respetando tu idea, estilo y la anatomía del cuerpo.'
       },
-      environment: {
-        title: 'Ambiente Acogedor',
-        description: 'Espacio pensado para proporcionar máxima comodidad y relajación'
+      specialization: {
+        title: 'Especialización en Realismo, Fine Line y Minimalismo',
+        description: 'Trazos precisos, detalles sutiles y composiciones que envejecen bien con el tiempo.'
+      },
+      internationalExperience: {
+        title: 'Experiencia Internacional',
+        description: 'Referencias y estándares profesionales adquiridos en Brasil, Holanda y Portugal.'
+      },
+      premiumService: {
+        title: 'Atención Premium e Individual',
+        description: 'Proceso cercano, transparente y totalmente enfocado en ti — desde el primer contacto hasta el post-tatuaje.'
+      },
+      exclusiveStudio: {
+        title: 'Estudio Exclusivo y Seguro en Braga',
+        description: 'Ambiente cómodo, controlado, materiales desechables y protocolos rigurosos de higiene.'
       }
-        ,
-        laserRemoval: {
-          title: 'Eliminación Láser',
-          description: 'Procedimiento seguro y eficaz para eliminar tatuajes no deseados utilizando tecnología láser avanzada.'
-        }
     },
     ctaTitle: 'Ven a Conocer en Persona',
     ctaDescription: 'Agenda una visita y ve de cerca donde se creará tu arte',
@@ -402,6 +475,32 @@ const es: Translation = {
         highlight: 'Atención personalizada'
       }
     }
+  },
+  trust: {
+    title: 'Confianza y Seguridad',
+    subtitle: 'Compromiso con calidad y seguridad',
+    items: [
+      {
+        title: 'Compromiso con calidad y seguridad',
+        description: ''
+      },
+      {
+        title: 'Atención individual y con cita programada',
+        description: ''
+      },
+      {
+        title: 'Materiales desechables y esterilización rigurosa',
+        description: ''
+      },
+      {
+        title: 'Orientaciones completas de cuidados post-tatuaje',
+        description: ''
+      },
+      {
+        title: 'Apoyo incluso después de la sesión',
+        description: ''
+      }
+    ]
   },
   contact: {
     title: 'Agenda Tu Sesión',
@@ -466,21 +565,21 @@ const fr: Translation = {
     about: 'À propos',
     portfolio: 'Portfolio',
     studio: 'Studio',
+    trust: 'Confiance',
     contact: 'Contact',
     location: 'Localisation'
   },
   hero: {
-    subtitle: 'Éternisant traits et histoires',
-    description: 'Plus de 5 ans à créer des tatouages uniques et sophistiqués. Chaque trait est pensé pour raconter votre histoire avec élégance et précision.',
+    subtitle: 'Votre histoire transformée en art pour la vie.',
+    description: 'Projets personnalisés en réalisme et fineline, avec une technique précise et une finition sophistiquée.',
     cta: 'Planifiez Votre Consultation'
   },
   about: {
     title: 'L\'Artiste',
     artistName: 'Brian Dantas',
-    paragraph1: "Je suis Brian Dantas, tatoueur professionnel depuis plus de 6 ans, avec une connexion profonde et authentique à l'art. J'ai trouvé dans le tatouage l'espace idéal pour unir technique, précision et créativité, toujours avec légèreté et authenticité.",
-    paragraph2: "Je travaille avec différents styles de tatouage, en privilégiant toujours des traits précis et des résultats harmonieux, sans jamais négliger la qualité. Je crois que chaque idée peut devenir une œuvre d'art unique lorsqu'elle est guidée par la sensibilité et l'attention aux détails.",
-    paragraph3: "Je valorise profondément le service humanisé, le confort de chaque personne qui passe sur ma table et, surtout, la biosécurité et l'hygiène dans tout le processus.",
-    paragraph4: "Chaque tatouage est fait avec soin, responsabilité et respect pour l'histoire qui est marquée sur la peau. Plus qu'un travail, tatouer est une passion vécue tous les jours.",
+    paragraph1: "Je suis Brian Dantas, tatoueur spécialisé en réalisme, fine line et tatouages minimalistes.",
+    paragraph2: "Mon travail est de transformer les idées en tatouages originaux, avec des traits précis, une esthétique équilibrée et une attention totale aux détails. Chaque projet est créé de manière unique, en respectant l'histoire de ceux qui portent l'art et l'harmonie du corps.",
+    paragraph3: "Je travaille chez THE BRIDGE TATTOO, à Braga, avec un processus soigné, un service individuel et des normes rigoureuses de sécurité et d'hygiène.",
     imageAlt: 'Brian Dantas - Tatoueur professionnel spécialisé en Réalisme et Fine Line'
   },
   portfolio: {
@@ -512,23 +611,30 @@ const fr: Translation = {
     subtitle: 'Un environnement professionnel, sûr et accueillant, pensé spécialement pour vous',
     featuresTitle: 'Nos Différentiels',
     features: {
-      biosafety: {
-        title: 'Biosécurité Totale',
-        description: 'Protocoles rigoureux de stérilisation et matériaux jetables'
+      uniqueAndPerfect: {
+        title: 'Art Unique et Impeccable',
+        description: 'Chaque tatouage créé est pensé pour être unique, intemporel et techniquement impeccable. Mon focus n\'est pas la quantité, mais la qualité, l\'exclusivité et la confiance à chaque étape du processus.'
       },
-      equipment: {
-        title: 'Équipements Premium',
-        description: 'Machines professionnelles et encres de première qualité'
+      personalizedArt: {
+        title: 'Art 100% Personnalisé',
+        description: 'Chaque projet est développé à partir de zéro, en respectant votre idée, votre style et l\'anatomie du corps.'
       },
-      environment: {
-        title: 'Environnement Accueillant',
-        description: 'Espace pensé pour offrir un maximum de confort et de détente'
+      specialization: {
+        title: 'Spécialisation en Réalisme, Fine Line et Minimalisme',
+        description: 'Traits précis, détails subtils et compositions qui vieillissent bien au fil du temps.'
+      },
+      internationalExperience: {
+        title: 'Expérience Internationale',
+        description: 'Références et normes professionnelles acquises au Brésil, aux Pays-Bas et au Portugal.'
+      },
+      premiumService: {
+        title: 'Service Premium et Individuel',
+        description: 'Processus proche, transparent et totalement orienté vers vous — du premier contact au suivi post-tatouage.'
+      },
+      exclusiveStudio: {
+        title: 'Studio Exclusif et Sûr à Braga',
+        description: 'Environnement confortable, contrôlé, matériaux jetables et protocoles rigoureux d\'hygiène.'
       }
-        ,
-        laserRemoval: {
-          title: 'Détatouage au Laser',
-          description: 'Procédure sûre et efficace pour retirer les tatouages indésirables grâce à la technologie laser avancée.'
-        }
     },
     ctaTitle: 'Venez Nous Rendre Visite en Personne',
     ctaDescription: 'Planifiez une visite et voyez de près où votre art sera créé',
@@ -545,6 +651,32 @@ const fr: Translation = {
         highlight: 'Service personnalisé'
       }
     }
+  },
+  trust: {
+    title: 'Confiance et Sécurité',
+    subtitle: 'Engagement envers la qualité et la sécurité',
+    items: [
+      {
+        title: 'Engagement envers la qualité et la sécurité',
+        description: ''
+      },
+      {
+        title: 'Service individuel et sur rendez-vous',
+        description: ''
+      },
+      {
+        title: 'Matériaux jetables et stérilisation rigoureuse',
+        description: ''
+      },
+      {
+        title: 'Conseils complets de soins post-tatouage',
+        description: ''
+      },
+      {
+        title: 'Support même après la séance',
+        description: ''
+      }
+    ]
   },
   contact: {
     title: 'Planifiez Votre Séance',

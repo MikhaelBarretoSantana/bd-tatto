@@ -5,7 +5,12 @@
 // =============================================================================
 .map-section {
   @include section-padding;
-  background: $color-dark;
+  background: linear-gradient(
+    135deg,
+    $color-darkest 0%,
+    $color-dark 50%,
+    $color-darkest 100%
+  );
 
   &__container {
     @include container;

@@ -51,25 +51,6 @@ const renderFormattedText = (text: string, artistName: string) => {
 };
 
 /**
- * Função para renderizar o último parágrafo com itálico na frase final
- */
-const renderLastParagraph = (text: string) => {
-  const italicPatterns = [
-    /Mais do que um trabalho, tatuar é uma paixão vivida todos os dias\./gi,
-    /More than work, tattooing is a passion lived every day\./gi,
-    /Más que un trabajo, tatuar es una pasión vivida todos los días\./gi,
-    /Plus qu'un travail, tatouer est une passion vécue tous les jours\./gi
-  ];
-
-  let formattedText = text;
-  italicPatterns.forEach(pattern => {
-    formattedText = formattedText.replace(pattern, (match) => `<em>${match}</em>`);
-  });
-
-  return formattedText;
-};
-
-/**
  * Seção About - Informações sobre o artista
  * Layout responsivo com texto e foto
  * VERSÃO FINAL: Todos os parágrafos traduzidos + formatados dinamicamente
@@ -102,13 +83,6 @@ const About: React.FC = () => {
               <p 
                 dangerouslySetInnerHTML={{ 
                   __html: renderFormattedText(t.about.paragraph3, t.about.artistName)
-                }} 
-              />
-              
-              {/* Parágrafo 4: Frase final em itálico */}
-              <p 
-                dangerouslySetInnerHTML={{ 
-                  __html: renderLastParagraph(renderFormattedText(t.about.paragraph4, t.about.artistName))
                 }} 
               />
             </div>

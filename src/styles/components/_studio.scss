@@ -5,12 +5,7 @@
 // =============================================================================
 .studio {
   @include section-padding;
-  background: linear-gradient(
-    135deg,
-    $color-dark 0%,
-    $color-darker 50%,
-    $color-dark 100%
-  );
+  background: $color-dark;
   position: relative;
   padding: 3rem 0;
 

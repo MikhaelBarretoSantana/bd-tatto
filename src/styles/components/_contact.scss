@@ -5,7 +5,7 @@
 // =============================================================================
 .contact {
   @include section-padding;
-  background: linear-gradient(135deg, $color-gray-dark 0%, $color-gray 100%);
+  background: $color-dark;
   text-align: center;
 
   &__container {

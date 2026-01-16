@@ -13,6 +13,7 @@ const getNavigationItems = (t: any) => [
   { id: 'about', label: t.header.about },
   { id: 'portfolio', label: t.header.portfolio },
   { id: 'studio', label: t.header.studio },
+  { id: 'trust', label: t.header.trust },
   { id: 'contact', label: t.header.contact },
   { id: 'location', label: t.header.location },
 ];

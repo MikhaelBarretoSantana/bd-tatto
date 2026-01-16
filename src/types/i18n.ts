@@ -13,6 +13,7 @@ export interface HeaderTranslation {
   about: string;
   portfolio: string;
   studio: string;
+  trust: string;
   contact: string;
   location: string;
 }
@@ -29,7 +30,6 @@ export interface AboutTranslation {
   paragraph1: string;
   paragraph2: string;
   paragraph3: string;
-  paragraph4: string;
   imageAlt: string;
 }
 
@@ -63,19 +63,27 @@ export interface StudioTranslation {
   subtitle: string;
   featuresTitle: string;
   features: {
-    biosafety: {
+    uniqueAndPerfect: {
       title: string;
       description: string;
     };
-    equipment: {
+    personalizedArt: {
       title: string;
       description: string;
     };
-    environment: {
+    specialization: {
       title: string;
       description: string;
     };
-    laserRemoval: {
+    internationalExperience: {
+      title: string;
+      description: string;
+    };
+    premiumService: {
+      title: string;
+      description: string;
+    };
+    exclusiveStudio: {
       title: string;
       description: string;
     };
@@ -95,6 +103,15 @@ export interface StudioTranslation {
       highlight: string;
     };
   };
+}
+
+export interface TrustTranslation {
+  title: string;
+  subtitle: string;
+  items: Array<{
+    title: string;
+    description: string;
+  }>;
 }
 
 export interface ContactTranslation {
@@ -163,6 +180,7 @@ export interface Translation {
   about: AboutTranslation;
   portfolio: PortfolioTranslation;
   studio: StudioTranslation;
+  trust: TrustTranslation;
   contact: ContactTranslation;
   map: MapTranslation;
   footer: FooterTranslation;

@@ -13,6 +13,7 @@ import {
   About,
   Portfolio,
   Studio,
+  TrustAndSecurity,
   Contact,
   MapSection,
   Footer,
@@ -45,6 +46,7 @@ const BDTattooLanding: React.FC = () => {
         <About />
         <Portfolio />
         <Studio />
+        <TrustAndSecurity />
         <Contact />
         <MapSection />
         <Footer />

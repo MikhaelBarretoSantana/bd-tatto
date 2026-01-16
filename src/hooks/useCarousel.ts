@@ -1,6 +1,6 @@
 // 🎠 Hook complexo para gerenciamento completo do carrossel
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface UseCarouselProps {
   totalSlides: number;
@@ -26,13 +26,13 @@ export const useCarousel = ({
   const minSwipeDistance = 50;
 
   // Navegação manual
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  }, [totalSlides]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -68,7 +68,7 @@ export const useCarousel = ({
       const interval = setInterval(nextSlide, autoPlayInterval);
       return () => clearInterval(interval);
     }
-  }, [isPaused, autoPlayInterval, totalSlides]);
+  }, [isPaused, autoPlayInterval, totalSlides, nextSlide]);
 
   // Navegação por teclado
   useEffect(() => {
@@ -101,7 +101,7 @@ export const useCarousel = ({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [totalSlides]);
+  }, [totalSlides, nextSlide, prevSlide]);
 
   return {
     currentSlide,

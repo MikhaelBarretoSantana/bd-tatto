@@ -17,7 +17,6 @@ const Portfolio: React.FC = () => {
   
   const {
     currentSlide,
-    isPaused,
     setIsPaused,
     nextSlide,
     prevSlide,

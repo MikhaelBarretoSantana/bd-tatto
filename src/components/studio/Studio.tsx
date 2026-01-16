@@ -5,11 +5,13 @@ import React from "react";
 import {
   ChevronLeft,
   ChevronRight,
-  Shield,
   Sparkles,
-  Heart,
+  Palette,
+  Eye,
+  Globe,
+  Users,
+  Building2,
   MapPin,
-  Zap,
 } from "lucide-react";
 import { useCarousel } from "../../hooks/useCarousel";
 import { useI18n } from "../../i18n/I18nContext";
@@ -19,31 +21,40 @@ import { STUDIO_IMAGES } from "../../constants";
 /**
  * Componente Studio - Showcasing do estúdio físico
  * Galeria interativa + facilidades + call-to-action
- * CORRIGIDO: Mantém textos originais das imagens do constants + tradução
  */
 const Studio: React.FC = () => {
   const { t } = useI18n();
   
   const STUDIO_FEATURES = [
     {
-      icon: Shield,
-      title: t.studio.features.biosafety.title,
-      description: t.studio.features.biosafety.description,
-    },
-    {
       icon: Sparkles,
-      title: t.studio.features.equipment.title,
-      description: t.studio.features.equipment.description,
+      title: t.studio.features.uniqueAndPerfect.title,
+      description: t.studio.features.uniqueAndPerfect.description,
     },
     {
-      icon: Heart,
-      title: t.studio.features.environment.title,
-      description: t.studio.features.environment.description,
+      icon: Palette,
+      title: t.studio.features.personalizedArt.title,
+      description: t.studio.features.personalizedArt.description,
     },
     {
-      icon: Zap,
-      title: t.studio.features.laserRemoval.title,
-      description: t.studio.features.laserRemoval.description,
+      icon: Eye,
+      title: t.studio.features.specialization.title,
+      description: t.studio.features.specialization.description,
+    },
+    {
+      icon: Globe,
+      title: t.studio.features.internationalExperience.title,
+      description: t.studio.features.internationalExperience.description,
+    },
+    {
+      icon: Users,
+      title: t.studio.features.premiumService.title,
+      description: t.studio.features.premiumService.description,
+    },
+    {
+      icon: Building2,
+      title: t.studio.features.exclusiveStudio.title,
+      description: t.studio.features.exclusiveStudio.description,
     },
   ];
 

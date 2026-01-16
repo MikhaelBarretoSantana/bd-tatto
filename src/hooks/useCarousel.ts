@@ -1,6 +1,6 @@
 // 🎠 Hook complexo para gerenciamento completo do carrossel
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface UseCarouselProps {
   totalSlides: number;
@@ -26,13 +26,13 @@ export const useCarousel = ({
   const minSwipeDistance = 50;
 
   // Navegação manual
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  }, [totalSlides]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
+  }, [totalSlides]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);

@@ -1,0 +1,165 @@
+// styles/components/_trust.scss
+// 🛡️ Estilos da seção Confiança e Segurança
+
+.trust {
+  @include section-padding;
+  background: linear-gradient(
+    135deg,
+    $color-darkest 0%,
+    $color-dark 50%,
+    $color-darkest 100%
+  );
+  position: relative;
+  padding: 3rem 0;
+
+  @include respond-to($bp-tablet) {
+    padding: 4rem 0;
+  }
+
+  @include respond-to($bp-desktop) {
+    padding: 5rem 0;
+  }
+
+  // Overlay decorativo sutil
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 80% 20%,
+      rgba($color-primary, 0.02) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+}
+
+.trust__container {
+  @include container;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+
+  @include respond-to($bp-tablet) {
+    padding: 0 2rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    padding: 0 4rem;
+  }
+}
+
+.trust__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.trust__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-primary;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+
+  @include respond-to($bp-tablet) {
+    font-size: 2.5rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    font-size: 3rem;
+  }
+}
+
+.trust__subtitle {
+  font-size: 1rem;
+  color: $color-gray-light;
+  font-weight: 500;
+
+  @include respond-to($bp-tablet) {
+    font-size: 1.1rem;
+  }
+}
+
+.trust__items-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include respond-to($bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.trust__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba($color-primary, 0.05);
+  border: 1px solid rgba($color-primary, 0.1);
+  border-radius: 8px;
+  @include transition();
+
+  @include respond-to($bp-tablet) {
+    padding: 2rem 1.5rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    padding: 2.5rem 1.5rem;
+  }
+
+  &:hover {
+    background: rgba($color-primary, 0.08);
+    border-color: rgba($color-primary, 0.2);
+    transform: translateY(-4px);
+  }
+}
+
+.trust__item-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-primary, 0.1);
+  border: 1px solid rgba($color-primary, 0.2);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: $color-primary;
+  @include transition();
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .trust__item:hover & {
+    background: rgba($color-primary, 0.15);
+    border-color: rgba($color-primary, 0.3);
+  }
+}
+
+.trust__item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $color-primary;
+  line-height: 1.5;
+
+  @include respond-to($bp-tablet) {
+    font-size: 1rem;
+  }
+
+  @include respond-to($bp-desktop) {
+    font-size: 0.95rem;
+  }
+}

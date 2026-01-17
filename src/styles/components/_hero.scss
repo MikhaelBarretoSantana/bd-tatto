@@ -145,11 +145,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease, filter 0.4s ease;
-    filter: grayscale(20%) brightness(0.9);
+    filter: grayscale(0%) brightness(1.25) contrast(1.15) saturate(1.15);
 
     .hero__showcase-item:hover & {
       transform: scale(1.1);
-      filter: grayscale(0%) brightness(1.1);
+      filter: grayscale(0%) brightness(1.4) contrast(1.25) saturate(1.25);
     }
   }
 
@@ -193,9 +193,9 @@
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba($color-darkest, 0.92) 0%,
-        rgba($color-dark, 0.88) 50%,
-        rgba($color-darkest, 0.92) 100%
+        rgba($color-darkest, 0.72) 0%,
+        rgba($color-dark, 0.68) 50%,
+        rgba($color-darkest, 0.72) 100%
       ),
       radial-gradient(
         circle at 30% 20%,
@@ -344,14 +344,15 @@
   // =============================================================================
   &__subtitle {
     font-size: 1.25rem;
-    color: $color-gray;
+    color: $color-gray-light;
     margin-bottom: 2rem;
     font-weight: 300;
     
     // 🌟 EFEITO BRILHANTE SUTIL NO SUBTÍTULO
     text-shadow: 
-      0 0 5px rgba($color-gray, 0.5),
-      0 0 10px rgba($color-gray, 0.2);
+      0 2px 8px rgba($color-darkest, 0.9),
+      0 0 15px rgba($color-darkest, 0.7),
+      0 0 10px rgba($color-darkest, 0.5);
     
     // 🌟 ANIMAÇÃO DE ENTRADA BRILHANTE
     animation: fadeInGlow 1s ease-out 1s both;
@@ -360,14 +361,15 @@
       font-size: 1.75rem;
       margin-bottom: 2.5rem;
       text-shadow: 
-        0 0 8px rgba($color-gray, 0.6),
-        0 0 15px rgba($color-gray, 0.3);
+        0 3px 12px rgba($color-darkest, 0.95),
+        0 0 20px rgba($color-darkest, 0.8),
+        0 0 15px rgba($color-darkest, 0.6);
     }
   }
 
   &__description {
     font-size: 1.1rem;
-    color: $color-gray;
+    color: $color-gray-light;
     margin-bottom: 3rem;
     max-width: 650px;
     margin-left: auto;
@@ -375,7 +377,9 @@
     line-height: 1.8;
     
     // 🌟 EFEITO BRILHANTE MUITO SUTIL
-    text-shadow: 0 0 3px rgba($color-gray, 0.3);
+    text-shadow: 
+      0 2px 6px rgba($color-darkest, 0.9),
+      0 0 10px rgba($color-darkest, 0.6);
     
     // 🌟 ANIMAÇÃO DE ENTRADA
     animation: fadeInGlow 1s ease-out 1.2s both;
@@ -396,8 +400,9 @@
     
     // 🌟 EFEITO BRILHANTE NO BOTÃO
     box-shadow: 
-      0 5px 15px rgba($color-primary, 0.2),
-      0 0 20px rgba($color-primary, 0.1);
+      0 8px 25px rgba($color-primary, 0.5),
+      0 0 30px rgba($color-primary, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
     
     // 🌟 ANIMAÇÃO DE ENTRADA
     animation: fadeInGlow 1s ease-out 1.5s both;
@@ -425,8 +430,9 @@
     
     &:hover {
       box-shadow: 
-        0 10px 30px rgba($color-primary, 0.3),
-        0 0 30px rgba($color-primary, 0.2);
+        0 12px 35px rgba($color-primary, 0.6),
+        0 0 40px rgba($color-primary, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
       text-shadow: 0 0 10px rgba($color-darkest, 0.5);
     }
 

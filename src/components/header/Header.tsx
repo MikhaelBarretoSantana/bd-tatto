@@ -10,12 +10,12 @@ import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 // Items de navegação agora são dinâmicos baseados no idioma
 const getNavigationItems = (t: any) => [
   { id: 'home', label: t.header.home },
-  { id: 'about', label: t.header.about },
   { id: 'portfolio', label: t.header.portfolio },
   { id: 'studio', label: t.header.studio },
   { id: 'trust', label: t.header.trust },
   { id: 'contact', label: t.header.contact },
   { id: 'location', label: t.header.location },
+  { id: 'about', label: t.header.about },
 ];
 
 /**

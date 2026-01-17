@@ -43,12 +43,12 @@ const BDTattooLanding: React.FC = () => {
         {/* Estrutura principal da página */}
         <Header />
         <Hero />
-        <About />
         <Portfolio />
         <Studio />
         <TrustAndSecurity />
         <Contact />
         <MapSection />
+        <About />
         <Footer />
 
         {/* Sistema de notificações */}

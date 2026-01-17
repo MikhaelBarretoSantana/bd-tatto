@@ -1,6 +1,3 @@
-// components/hero/Hero.tsx
-// 🚀 Seção principal/banner com carrossel infinito de tatuagens - Internacionalizado
-
 import React from "react";
 import { useI18n } from "../../i18n/I18nContext";
 import { openWhatsApp } from "../../utils";

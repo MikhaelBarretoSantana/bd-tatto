@@ -69,6 +69,18 @@ const Studio: React.FC = () => {
     onTouchEnd,
   } = useCarousel({ totalSlides: STUDIO_IMAGES.length });
 
+  // Carrossel dos features para mobile
+  const {
+    currentSlide: currentFeatureSlide,
+    setIsPaused: setFeatureIsPaused,
+    nextSlide: nextFeatureSlide,
+    prevSlide: prevFeatureSlide,
+    goToSlide: goToFeatureSlide,
+    onTouchStart: onFeatureTouchStart,
+    onTouchMove: onFeatureTouchMove,
+    onTouchEnd: onFeatureTouchEnd,
+  } = useCarousel({ totalSlides: STUDIO_FEATURES.length });
+
   const handleVisitRequest = () => {
     openWhatsApp(t.whatsapp.studioVisitMessage);
   };
@@ -190,7 +202,9 @@ const Studio: React.FC = () => {
 
         <div className="studio__features">
           <h3 className="studio__features-title">{t.studio.featuresTitle}</h3>
-          <div className="studio__features-grid">
+          
+          {/* Desktop: Grid Layout */}
+          <div className="studio__features-grid studio__features-grid--desktop">
             {STUDIO_FEATURES.map((feature, index) => (
               <div key={index} className="studio__feature-card">
                 <div className="studio__feature-icon">
@@ -201,6 +215,75 @@ const Studio: React.FC = () => {
                   {feature.description}
                 </p>
               </div>
+            ))}
+          </div>
+
+          {/* Mobile: Carousel Layout */}
+          <div 
+            className="studio__features-carousel"
+            onMouseEnter={() => setFeatureIsPaused(true)}
+            onMouseLeave={() => setFeatureIsPaused(false)}
+            onTouchStart={() => setFeatureIsPaused(true)}
+            onTouchEnd={() => setFeatureIsPaused(false)}
+          >
+            <button
+              className="studio__features-carousel-btn studio__features-carousel-btn--prev"
+              onClick={prevFeatureSlide}
+              aria-label={t.accessibility.previousImage}
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <div
+              className="studio__features-carousel-wrapper"
+              onTouchStart={onFeatureTouchStart}
+              onTouchMove={onFeatureTouchMove}
+              onTouchEnd={onFeatureTouchEnd}
+            >
+              <div
+                className="studio__features-carousel-track"
+                style={{ transform: `translateX(-${currentFeatureSlide * 100}%)` }}
+              >
+                {STUDIO_FEATURES.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="studio__features-carousel-slide"
+                  >
+                    <div className="studio__feature-card">
+                      <div className="studio__feature-icon">
+                        <feature.icon size={28} />
+                      </div>
+                      <h4 className="studio__feature-title">{feature.title}</h4>
+                      <p className="studio__feature-description">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <button
+              className="studio__features-carousel-btn studio__features-carousel-btn--next"
+              onClick={nextFeatureSlide}
+              aria-label={t.accessibility.nextImage}
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+
+          <div className="studio__features-carousel-indicators">
+            {STUDIO_FEATURES.map((_, index) => (
+              <button
+                key={index}
+                className={`studio__features-carousel-indicator ${
+                  index === currentFeatureSlide
+                    ? "studio__features-carousel-indicator--active"
+                    : ""
+                }`}
+                onClick={() => goToFeatureSlide(index)}
+                aria-label={`Ver diferencial ${index + 1}`}
+              />
             ))}
           </div>
         </div>

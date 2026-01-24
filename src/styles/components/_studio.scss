@@ -573,12 +573,13 @@
     }
 
     &-grid {
-      display: grid;
+      display: none;
       gap: 1.5rem;
       max-width: 100%;
       margin: 0 auto;
 
       @include respond-to($bp-tablet) {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         max-width: 900px;
@@ -586,6 +587,12 @@
 
       @include respond-to($bp-desktop) {
         gap: 2.5rem;
+      }
+
+      &--desktop {
+        @include respond-to($bp-tablet) {
+          display: grid;
+        }
       }
     }
   }
@@ -843,4 +850,98 @@
 
 .studio__cta {
   animation: fadeInStudio 0.8s ease-out 0.7s both;
+}
+
+// =============================================================================
+// CARROSSEL DE FEATURES PARA MOBILE
+// =============================================================================
+
+.studio__features-carousel {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+
+  @include respond-to($bp-tablet) {
+    display: none;
+  }
+
+  &-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  &-track {
+    display: flex;
+    transition: transform 0.5s ease-out;
+    width: 100%;
+  }
+
+  &-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba($color-primary, 0.1);
+    border: 1px solid rgba($color-primary, 0.2);
+    border-radius: 50%;
+    color: $color-primary;
+    cursor: pointer;
+    @include transition();
+    flex-shrink: 0;
+
+    &:hover {
+      background: rgba($color-primary, 0.2);
+      border-color: rgba($color-primary, 0.3);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.studio__features-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+
+  @include respond-to($bp-tablet) {
+    display: none;
+  }
+}
+
+.studio__features-carousel-indicator {
+  width: 8px;
+  height: 8px;
+  background: rgba($color-primary, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  @include transition();
+
+  &:hover {
+    background: rgba($color-primary, 0.6);
+  }
+
+  &--active {
+    background: $color-primary;
+    transform: scale(1.3);
+  }
 }

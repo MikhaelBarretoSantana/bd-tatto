@@ -1,5 +1,4 @@
 import React from "react";
-import WhatsAppIcon from "../WhatsAppIcon/WhatsAppIcon";
 import { useI18n } from "../../i18n/I18nContext";
 import { openInstagram } from "../../utils";
 import InstagramAppIcon from "../InstagramAppIcon/InstagramAppIcon";

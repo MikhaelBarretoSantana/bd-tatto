@@ -18,6 +18,14 @@ export const openWhatsApp = (customMessage?: string) => {
   window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 };
 
+export const openInstagram = () => {
+  window.open(
+    "https://www.instagram.com/briandantastattoo/?utm_source=ig_web_button_share_sheet",
+    "_blank",
+    "noopener, noreferrer",
+  );
+};
+
 /**
  * Remove todos os caracteres não numéricos do telefone
  */
@@ -52,21 +60,24 @@ export const capitalizeName = (name: string): string => {
  */
 export const detectUserLanguage = (): Language => {
   const browserLang = navigator.language.toLowerCase();
-  
-  if (browserLang.startsWith('pt')) return 'pt';
-  if (browserLang.startsWith('en')) return 'en';
-  if (browserLang.startsWith('es')) return 'es';
-  if (browserLang.startsWith('fr')) return 'fr';
-  
-  return 'pt'; // Padrão
+
+  if (browserLang.startsWith("pt")) return "pt";
+  if (browserLang.startsWith("en")) return "en";
+  if (browserLang.startsWith("es")) return "es";
+  if (browserLang.startsWith("fr")) return "fr";
+
+  return "pt"; // Padrão
 };
 
 /**
  * Formata mensagem com parâmetros
  */
-export const formatMessage = (template: string, params: Record<string, string | number>): string => {
+export const formatMessage = (
+  template: string,
+  params: Record<string, string | number>,
+): string => {
   return Object.entries(params).reduce((acc, [key, value]) => {
-    return acc.replace(new RegExp(`\\{${key}\\}`, 'g'), String(value));
+    return acc.replace(new RegExp(`\\{${key}\\}`, "g"), String(value));
   }, template);
 };
 
@@ -74,7 +85,7 @@ export const formatMessage = (template: string, params: Record<string, string | 
  * Valida se um idioma é suportado
  */
 export const isLanguageSupported = (lang: string): lang is Language => {
-  return ['pt', 'en', 'es', 'fr'].includes(lang);
+  return ["pt", "en", "es", "fr"].includes(lang);
 };
 
 /**
@@ -82,13 +93,15 @@ export const isLanguageSupported = (lang: string): lang is Language => {
  */
 export const getSafeTranslation = (language: Language, key: string): string => {
   const t = translations[language];
-  const value = key.split('.').reduce((obj: any, k) => obj?.[k], t);
-  
-  if (typeof value === 'string') {
+  const value = key.split(".").reduce((obj: any, k) => obj?.[k], t);
+
+  if (typeof value === "string") {
     return value;
   }
-  
+
   // Fallback para português se não encontrar
-  const fallback = key.split('.').reduce((obj: any, k) => obj?.[k], translations.pt);
-  return typeof fallback === 'string' ? fallback : key;
+  const fallback = key
+    .split(".")
+    .reduce((obj: any, k) => obj?.[k], translations.pt);
+  return typeof fallback === "string" ? fallback : key;
 };

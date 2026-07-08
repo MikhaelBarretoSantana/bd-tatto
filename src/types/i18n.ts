@@ -159,6 +159,7 @@ export interface AccessibilityTranslation {
   openMenu: string;
   closeMenu: string;
   openWhatsApp: string;
+  openInstagram: string;
   previousImage: string;
   nextImage: string;
   goToSlide: string;

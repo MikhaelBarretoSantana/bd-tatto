@@ -193,6 +193,30 @@ $bp-large: 1200px;
   }
 }
 
+@keyframes instagram-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-instagram {
+  0% {
+    box-shadow: 0 4px 20px rgba(#e1306c, 0.42);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(#e1306c, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(#e1306c, 0.42);
+  }
+}
+
 @keyframes pulse-whatsapp {
   0% {
     box-shadow: 0 4px 20px rgba($color-whatsapp, 0.4);

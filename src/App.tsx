@@ -18,6 +18,7 @@ import {
   MapSection,
   Footer,
   WhatsAppFloat,
+  InstagramAppFloat,
 } from "./components";
 import { useGoogleFonts } from "./hooks/useGoogleFonts";
 import { I18nProvider } from "./i18n/I18nContext";
@@ -39,6 +40,9 @@ const BDTattooLanding: React.FC = () => {
       <div className="bd-tattoo">
         {/* Botão flutuante do WhatsApp */}
         <WhatsAppFloat />
+
+        {/* Botão flutuante do Instagram */}
+        <InstagramAppFloat />
 
         {/* Estrutura principal da página */}
         <Header />

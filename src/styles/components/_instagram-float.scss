@@ -1,0 +1,93 @@
+// =============================================================================
+// Instagram FLOATING BUTTON
+// =============================================================================
+.Instagram-float {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 62px;
+  height: 62px;
+  background: linear-gradient(
+    135deg,
+    #405de6,
+    #5b61ef 45%,
+    #e1306c 85%,
+    #ff7a59
+  );
+  background-size: 180% 180%;
+  border: 1px solid rgba(#ffffff, 0.2);
+
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1000;
+  overflow: hidden;
+  isolation: isolate;
+  @include flex-center;
+  box-shadow:
+    0 4px 18px rgba(#e1306c, 0.32),
+    0 0 0 1px rgba(#ffffff, 0.06) inset;
+  @include transition();
+  will-change: transform, background-position, box-shadow, filter;
+  filter: saturate(1.08) brightness(1.04);
+  animation:
+    pulse-instagram 2s infinite,
+    instagram-gradient-flow 14s ease-in-out infinite;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -14%;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(#ffffff, 0.34),
+      transparent 42%
+    );
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &:hover {
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(#bc3c72, 0.34);
+    filter: saturate(1.02) brightness(1.02);
+  }
+
+  &:active {
+    transform: scale(0.985);
+  }
+
+  &:focus-visible {
+    box-shadow:
+      0 8px 28px rgba(#e1306c, 0.52),
+      0 0 18px rgba(#405de6, 0.18);
+    filter: saturate(1.15) brightness(1.08);
+    box-shadow:
+      0 0 0 5px rgba(#405de6, 0.28),
+      0 8px 28px rgba(#e1306c, 0.42);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 6px rgba(#000000, 0.18));
+  }
+
+  // Responsividade
+  @media (max-width: $bp-mobile) {
+    width: 60px;
+    height: 60px;
+    bottom: 100px;
+    right: 20px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
+  }
+}
+

@@ -4,6 +4,7 @@
 // Componentes de UI/Utilitários
 export { default as WhatsAppIcon } from "./WhatsAppIcon/WhatsAppIcon";
 export { default as WhatsAppFloat } from "./whatsAppFloat/WhatsAppFloat";
+export { default as InstagramAppFloat } from "./instagramAppFloat/InstagramAppFloat";
 export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 
 // Componentes principais da página
